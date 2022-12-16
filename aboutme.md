@@ -1,13 +1,17 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: About us
+subtitle: Why you'd want to go on a date with one of us
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+the team is composed of 4 valiant musketeers!
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+ 1) Jérémie Veuthey [mailto:jeremie.veuthey@epfl.ch](his wunderful mail address):
+    - Master 3 : Energy Science and technology
+    - aka : Athos
+ 2) Julien Gasser [mailto:julien.gasser@epfl.ch](mail of this beautiful guy)
+    - Master 3 : Electrical engineering
+    - aka : Aramis
 
 What else do you need?
 
