@@ -5,7 +5,7 @@ subtitle: Why you'd want to go on a date with one of us
 ---
 
 <p align="center">
-![title_ADA_petit](https://user-images.githubusercontent.com/77831063/208110285-4480698b-0243-4f3b-bb01-293fa6979555.png)
+[title_ADA_petit](https://user-images.githubusercontent.com/77831063/208110285-4480698b-0243-4f3b-bb01-293fa6979555.png)
 </p>
 
 the team is composed of 4 valiant musketeers!
