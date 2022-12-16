@@ -16,7 +16,7 @@ Isn'it wonderful ?
 
 ### A first fig integration
 
-blabla
+blabla Jerem
 
 {% include map_fig.html %}
 
