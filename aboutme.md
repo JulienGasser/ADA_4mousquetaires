@@ -6,14 +6,14 @@ subtitle: Why you'd want to go on a date with one of us
 
 the team is composed of 4 valiant musketeers!
 
- 1) Jérémie Veuthey [his wunderful mail address](mailto:jeremie.veuthey@epfl.ch):
-    - Master 3 : Energy Science and technology
-    - aka : Athos
+ 1) Jérémie Veuthey [his wunderful mail address](mailto:jeremie.veuthey@epfl.ch):<br>
+    - Master 3 : Energy Science and technology <br>
+    - aka : Athos <br>
 
 
- 2) Julien Gasser [mail of this beautiful guy](mailto:julien.gasser@epfl.ch)
-    - Master 3 : Electrical engineering
-    - aka : Aramis
+ 2) Julien Gasser [mail of this beautiful guy](mailto:julien.gasser@epfl.ch)<br>
+    - Master 3 : Electrical engineering <br>
+    - aka : Aramis <br>
 
 What else do you need?
 
