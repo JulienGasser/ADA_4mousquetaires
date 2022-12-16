@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="beermap.json"></script>
+  </head>
+  <body>
+    <!-- Dropdown menu to select data to display -->
+    <h2>Brewery succes simulation</h2>
+    <p>Select a country where you construct your brewery:</p>
+    <select id="select-country" onchange="updatePlot()">
+        <option value="USA">United States</option>
+        <option value="GBR">United Kingdom</option>
+        <option value="DEU">Germany</option>
+        <option value="CAN">Canada</option>
+        <option value="ITA">Italy</option>
+        <option value="FRA">France</option>
+        <option value="ESP">Spain</option>
+        <option value="AUS">Australia</option>
+        <option value="NLD">Netherlands</option>
+        <option value="CHE">Switzerland</option>
+        <option value="BEL">Belgium</option>
+        <option value="RUS">Russia</option>
+        <option value="CZE">Czech Republic</option>
+        <option value="BRA">Brazil</option>
+        <option value="AUT">Austria</option>
+        <option value="JPN">Japan</option>
+        <option value="SWE">Sweden</option>
+        <option value="POL">Poland</option>
+        <option value="MEX">Mexico</option>
+        <option value="DNK">Denmark</option>
+        <option value="ARG">Argentina</option>
+        <option value="NZL">New Zealand</option>
+        <option value="NOR">Norway</option>
+        <option value="ZAF">South Africa</option>
+        <option value="CHN">China</option>
+        <option value="IRL">Ireland</option>
+        <option value="CHL">Chile</option>
+        <option value="UKR">Ukraine</option>
+        <option value="HUN">Hungary</option>
+        <option value="FIN">Finland</option>
+        <option value="PRT">Portugal</option>
+        <option value="LTU">Lithuania</option>
+        <option value="SVK">Slovak Republic</option>
+        <option value="SVN">Slovenia</option>
+        <option value="IND">India</option>
+        <option value="THA">Thailand</option>
+        <option value="VNM">Vietnam</option>
+    </select>
+    <p>Select a country where you construct your brewery:</p>
+    <select id="select-beer-style" onchange="updatePlot()">
+        <option value="Ale">Ale</option>
+        <option value="Amber Ale">Amber Ale</option>
+        <option value="Amber Lager">Amber Lager</option>
+        <option value="Belgian Ale">Belgian Ale</option>
+        <option value="Bitter Ale">Bitter Ale</option>
+        <option value="Bock">Bock</option>
+        <option value="Brown Ale">Brown Ale</option>
+        <option value="Cider">Cider</option>
+        <option value="Dark Ale">Dark Ale</option>
+        <option value="Dark Lager">Dark Lager</option>
+        <option value="IIPA">IIPA</option>
+        <option value="IPA">IPA</option>
+        <option value="Lager">Lager</option>
+        <option value="Mead">Mead</option>
+        <option value="Pale Ale">Pale Ale</option>
+        <option value="Pilsener">Pilsener</option>
+        <option value="Porter">Porter</option>
+        <option value="Saké">Saké</option>
+        <option value="Sour">Sour</option>
+        <option value="Specialty Beer">Specialty Beer</option>
+        <option value="Stout">Stout</option>
+        <option value="Strong Ale">Strong Ale</option>
+        <option value="Wheat Beer">Wheat Beer</option>
+    </select>
+    <!-- Div to hold the plotly chart -->
+    <br>
+    <br>
+    <div id="plotly-chart"></div>
+    <script>
+    figureData = JSON.parse(data);
+    Plotly.newPlot('plotly-chart', figureData['CAN']['IPA']['data'], figureData['CAN']['IPA']['layout']);
+    Plotly.addFrames('plotly-chart', figureData['CAN']['IPA']['frames']);
+
+    // Function to update the chart when the dropdown menu selection changes
+    function updatePlot() {
+        // Get the selected data from the dropdown menu
+        var country = document.getElementById('select-country').value;
+        var style = document.getElementById('select-beer-style').value;
+
+
+        console.log(country);
+        // Update the chart with the selected data
+        //chartData = [{x: window[data], type: 'scatter'}];
+        //Plotly.react('plotly-chart', chartData, layout);
+        Plotly.restyle('plotly-chart', figureData[country][style]['data'][0]);
+        Plotly.addFrames('plotly-chart', figureData[country][style]['frames']);
+    }
+    </script>
+  </body>
+</html>

@@ -18,7 +18,7 @@ Isn'it wonderful ?
 
 blabla
 
-{% include map_fig.html %}
+{% include beermap.html %}
 
 ### Our main simulation
 
