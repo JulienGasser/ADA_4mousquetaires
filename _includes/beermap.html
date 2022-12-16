@@ -1,9 +1,7 @@
-<html>
-  <head>
+<div>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="beermap.json"></script>
-  </head>
-  <body>
+    <script>{% include beermap.json %}</script>
+
     <!-- Dropdown menu to select data to display -->
     <h2>Brewery succes simulation</h2>
     <p>Select a country where you construct your brewery:</p>
@@ -96,5 +94,4 @@
         Plotly.addFrames('plotly-chart', figureData[country][style]['frames']);
     }
     </script>
-  </body>
-</html>
+</div>
