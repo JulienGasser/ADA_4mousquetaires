@@ -28,3 +28,6 @@ blabla
 {% include athos.html %}
 
 {% include porthos.html %}
+
+
+{% include export_beer.html %}
