@@ -8,7 +8,7 @@ subtitle: Why you'd want to go on a date with one of us
  <img src="https://user-images.githubusercontent.com/77831063/202671376-6a4ebd1e-e6d2-4096-af15-e275b3d00cd3.png" />
 </p>
 
-the team is composed of 4 valiant musketeers!
+The team is composed of 4 valiant musketeers!
 
  1) Jérémie Veuthey <br>
  - Master 3 : Energy Science and technology <br>
