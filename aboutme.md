@@ -10,17 +10,20 @@ subtitle: Why you'd want to go on a date with one of us
 
 the team is composed of 4 valiant musketeers!
 
- 1) Jérémie Veuthey [his wunderful mail address](mailto:jeremie.veuthey@epfl.ch):<br>
-    - Master 3 : Energy Science and technology <br>
-    - aka : Athos <br>
+ 1) Jérémie Veuthey <br>
+ - Master 3 : Energy Science and technology <br>
+ - Aka : Athos <br>
 
 
- 2) Julien Gasser [mail of this beautiful guy](mailto:julien.gasser@epfl.ch)<br>
-    - Master 3 : Electrical engineering <br>
-    - aka : Aramis <br>
+ 2) Julien Gasser <br>
+ - Master 3 : Electrical engineering <br>
+ - Aka : Aramis <br>
 
-What else do you need?
 
-### My story
+ 3) Florent Aviolat <br>
+ - Master 3 : Energy Science and technology <br>
+ - Aka : D'Artagnan <br>
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+ 4) Damien Gomez Donoso <br>
+ - Master 1 : Data Science <br>
+ - Aka : Porthos <br>
