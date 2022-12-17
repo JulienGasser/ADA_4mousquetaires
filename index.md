@@ -16,9 +16,20 @@ Isn'it wonderful ?
 
 ### A first fig integration
 
-blabla
-
 {% include beermap.html %}
+
+
+plein de commentaire sur cette première figure...
+
+<div id="plotly-exportfig"></div>
+
+Voici l'emplacement de la figure suivante.
+
+<br>
+<br>
+<div id="plotly-countryfig"></div>
+
+On devrait pas mélanger les balises et le markdown mais on va voir ce que ça donne....
 
 ### Our main simulation
 

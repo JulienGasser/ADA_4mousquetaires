@@ -1,7 +1,4 @@
 <div>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script>{% include beermap.json %}</script>
-
     <!-- Dropdown menu to select data to display -->
     <h2>Brewery succes simulation</h2>
     <p>Select a country where you construct your brewery:</p>
@@ -73,25 +70,5 @@
     <!-- Div to hold the plotly chart -->
     <br>
     <br>
-    <div id="plotly-chart"></div>
-    <script>
-    figureData = JSON.parse(data);
-    Plotly.newPlot('plotly-chart', figureData['CAN']['IPA']['data'], figureData['CAN']['IPA']['layout']);
-    Plotly.addFrames('plotly-chart', figureData['CAN']['IPA']['frames']);
-
-    // Function to update the chart when the dropdown menu selection changes
-    function updatePlot() {
-        // Get the selected data from the dropdown menu
-        var country = document.getElementById('select-country').value;
-        var style = document.getElementById('select-beer-style').value;
-
-
-        console.log(country);
-        // Update the chart with the selected data
-        //chartData = [{x: window[data], type: 'scatter'}];
-        //Plotly.react('plotly-chart', chartData, layout);
-        Plotly.restyle('plotly-chart', figureData[country][style]['data'][0]);
-        Plotly.addFrames('plotly-chart', figureData[country][style]['frames']);
-    }
-    </script>
+    <div id="plotly-beermap"></div>
 </div>

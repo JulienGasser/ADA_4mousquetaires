@@ -54,6 +54,8 @@
     {% endfor %}
   {% endif %}
 
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
   {% if layout.common-css %}
     {% for css in layout.common-css %}
       <link rel="stylesheet" href="{{ css | relative_url }}">
