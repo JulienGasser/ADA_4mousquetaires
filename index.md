@@ -45,6 +45,6 @@ On devrait pas mélanger les balises et le markdown mais on va voir ce que ça d
 
 ## Beer export rate
 
-D'Artagnan went in search of data to determine the **beer export rate**. He took the data from the druid cleaned by Aramis and for each year, he calculated **for each beer producing country the yearly proportion of beer distributed in each beer consumming country**. He collected all these data in a **table named $exported$ and transmitted it to Athos**, in order to go on with the building of the simulation algorithm.
+D'Artagnan went in search of data to determine the **beer export rate**. He took the data from the druid cleaned by Aramis and for each year, he calculated **for each beer producing country the yearly proportion of beer distributed in each beer consumming country**. He collected all these data in a **table named $exported$ and transmitted it to Athos**, in order to go on with the building of the simulation algorithm. <math> x^2 </math>
 
 
