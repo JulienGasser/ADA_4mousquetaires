@@ -41,10 +41,14 @@ On devrait pas mélanger les balises et le markdown mais on va voir ce que ça d
 {% include porthos.html %}
 
 
-{% include export_beer.html %}
+{% include export_beer.html %}![beer_consuming_countries]
+
 
 ## Beer export rate
 
 D'Artagnan went in search of data to determine the **beer export rate**. He took the data from the druid cleaned by Aramis and for each year, he calculated **for each beer producing country the yearly proportion of beer distributed in each beer consumming country**. He collected all these data in a **table named $exported$ and transmitted it to Athos**, in order to go on with the building of the simulation algorithm. <math> x^2 </math>
 
 
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/114057932/208531325-7ea96e5f-eec3-47a5-afae-d0405ecb0f66.png" />
+</p>
