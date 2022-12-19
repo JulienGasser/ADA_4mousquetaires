@@ -53,19 +53,18 @@ The following **hypothesis** were done to build the table $exported$ :
 * this calculation assumes that the proportion of beer exportation is independant of the style of beer. Nevertheless, in the meantime, Athos was developing an analysis to take this effect into account.
 
 At this step, D'Artagnan had a big table including 14 years, 203 beer production countries and 186 beer consuming countries. His next task was to **filter these data to help the little and gentle brewer** to decide in which country to establish its brewery. Remembering the will of the little and gentle brewer to spread its beer and thus happiness in as many countries as possible, he generated the graph (fig.'Number of beer consumming countries per beer producing country'). He **plotted the number of beer consumming countries to which the beer producing countries export** during the whole time story (i.e. 2004 to 2017). From this heavy-tailed distribution, he could **advice the little and gentle brewer to choose one beer producing country** with a high number og beer consumming countries to settle down.
-
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/114057932/208531325-7ea96e5f-eec3-47a5-afae-d0405ecb0f66.png" />
+</p>
 Finally, D'Artagnan **plotted a detailled yearly exportation of beers for some beer producing countries**. For displaying purpose, he opted to show the following subset of the $exported$ table. He selected the about top-ten percent of advised beer producing countries (on the plot (fig.'Number of beer consumming countries per beer producing country'), this corresponds to countries with a number of consumming country above the red line) and the beer consumming countries that contributed at least a share of 0.001 of the beers exported from the selected beer producing countries. The objective of this plot is to represent the annual evolution of the exports of the beer producing countries that D'Artagan advises to the little and gentle brewer and also to illustrate the table $exported$ with this subset of data (fig.'Proportion of beer exported from the selected beer producing countries')
+{% include export_beer.html %}
 
-**parchment of use of the graph (fig.'Proportion of beer exported from the selected beer producing countries')** :
+**Parchment of use of the graph (fig.'Proportion of beer exported from the selected beer producing countries')** :
 * each line represents one of the selected beer producing countries $$c_0$$.
 * each column represents one of the selected beer consumming countries $$c$$.
 * the value of a cell $$exported_{c_0,c}[i]$$ is the proportion exported from a beer producing country $$c_0$$ to a beer consumming country $$c$$ during the considered year $$i$$. 
 * a producing country exports beers to a higher number of consumming countries when the higher number of non-zero values on a line (i.e. not white cell).
 
 
-<p align="center">
- <img src="https://user-images.githubusercontent.com/114057932/208531325-7ea96e5f-eec3-47a5-afae-d0405ecb0f66.png" />
-</p>
-<p align="center">
-{% include export_beer.html %}
-</p>
+
+
