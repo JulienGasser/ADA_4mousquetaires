@@ -66,5 +66,6 @@ Finally, D'Artagnan **plotted a detailled yearly exportation of beers for some b
 <p align="center">
  <img src="https://user-images.githubusercontent.com/114057932/208531325-7ea96e5f-eec3-47a5-afae-d0405ecb0f66.png" />
 </p>
-
+<p align="center">
 {% include export_beer.html %}
+</p>
