@@ -41,7 +41,7 @@ On devrait pas mélanger les balises et le markdown mais on va voir ce que ça d
 {% include porthos.html %}
 
 
-{% include export_beer.html %}![beer_consuming_countries]
+{% include export_beer.html %}
 
 
 ## Beer export rate
