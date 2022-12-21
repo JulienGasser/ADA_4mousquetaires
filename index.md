@@ -152,11 +152,9 @@ $$\quad$$As the dataset contained ratings with the rated **beers type**, the **p
 
 $$\quad$$Porthos found a formula to calculate how many beers the little and gentle brewer have to produce the year $$i + 1$$ to satisfy the demand of a specific country $$c$$  : 
 
-$$
-{production_{c}[i+1] = exported_{c_0,c}[i] \times (1 +  w_{c}[i] \times \Delta popularity_{c}[i])}
-$$
+\\[production_{c}[i+1] = exported_{c_0,c}[i] \times (1 +  w_{c}[i] \times \Delta popularity_{c}[i])\\]
 
-$$
+\\[
 \begin{aligned}
 &\begin{array}{ll}
 production_{c}[i+1] : & \text{number of beers to produce for the year i+1 to statisfy the demand of the country $$c$$ }\\
@@ -165,7 +163,7 @@ exported_{c_0,c}[i] : & \text{number of beers exported for the year i in the cou
 w_{c}[i] : & \text{coefficient for year i to weight the popularity variation in the country $$c$$ (given by Athos)}\\
 \end{array}
 \end{aligned}
-$$
+\\]
 
 {: .box-note} 
 **Note** : $$production_{c}$$, $$exported_{c}$$, $$\Delta popularity_{c}$$ and $$w_{c}$$ are calculated for the fixed beer's type chosen by the little and gentle brewer.
