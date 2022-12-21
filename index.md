@@ -94,7 +94,7 @@ Finally, D'Artagnan **plotted the detailled yearly repartition of beers expected
 
 
 
-## Story de jerem
+## Study of the beers ratings distributions
 In the course of these various investigations, Athos decided to look more closely at the influence of the small brewer's choice of beer style.
 Noting that each style is not appreciated in the same way in all countries, he realized that exports varied significantly when the ratings were very good or very bad. However, this was not an immutable and universal rule. Chance played a significant role in the equation. He knew that.
 He had his back to the wall and had to find a way to model a country's affinity for a style of beer when an idea came to him. He constructed the following algorithm.
