@@ -13,6 +13,7 @@ The team is composed of 4 valiant musketeers, presented from left to right:
  1) Florent Aviolat <br>
  - Master 3 : Energy Science and technology <br>
  - Aka : D'Artagnan <br>
+ - Description : A poor but intelligent boy who came to EPFL to join the Musketeers and make his fortune
 
 
  2) Julien Gasser <br>
