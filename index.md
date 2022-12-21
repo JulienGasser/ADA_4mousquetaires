@@ -127,7 +127,7 @@ $$\quad$$ The next task is then to predict what the rating would be in each beer
 **Note:** It's up to you, user of this sublime website, to play with the button to display these ratings densities in the countries of your choice.
 
 {: .box-note}
-**Note:** The distribution of the ratings in a country is plotted given the beer style that has been chosen to brew in the above Brewery success simulation tool to assess the affinity that your country has towards the chosen beer style.
+**Note:** The distribution of the ratings in your country is plotted given the beer style that has been chosen to brew in the above Brewery success simulation tool to assess the affinity that your country has towards the chosen beer style.
 
 $$\quad$$ However, there is still a chance factor that applies on ratings that cannot be quantified directly in a model. A random draw is thus performed according to the multinomial distribution of ratings to determine the rating of the chosen beer style in each beer consumming country for each year. This method is chosen in order to take into account the distribution of rating and the factor of chance in rating assignments.
 
