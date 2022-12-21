@@ -94,9 +94,9 @@ Finally, D'Artagnan **plotted the detailled yearly repartition of beers expected
 
 ## *3) Study of the beers ratings distributions*
 
-$$\quad$$ Since the step of creating the beer export table $$exported$$ does not take into account the style of the beer, the task of Athos and Porthos is to adjust the expected exports by taking into account the appreciation of a type of beer. In this chapter, Athos' tasks is developped. At the end, the output of this work consists in weights that are sent further to Porthos.
+$$\quad$$ Since the step of creating the beer export table $$exported$$ does not take into account the style of the beer, the task of Athos and Porthos is to adjust the expected exports by taking into account the appreciation of a type of beer. In this chapter, Athos' tasks is developped.
 
-$$\quad$$ The old musketeer, thanks to his long experience and his hard-earned data science skills, has managed to identify the little and gentle brewer. He manages to estimate his behavior by imagining the reaction he might have when analyzing the ratings his beer receives. He makes the following assumptions:
+$$\quad$$ The old musketeer, thanks to his long experience and his hard-earned data science skills, has succeeded to identify the little and gentle brewer. He managed to estimate his behavior by imagining the reaction he might have when analyzing the ratings his beer receives. He makes the following assumptions:
 
 * If the ratings that his beer receives in a country [c1] are very good, he adapts his production and sends more beers than initially expected to that country [c1].
 
@@ -104,7 +104,7 @@ $$\quad$$ The old musketeer, thanks to his long experience and his hard-earned d
 
 Athos therefore tries to model his behavior in the following correspondence table:
 
-| Randomly drawn <br> rating | Effect on the variation of <br> the beer exportations |
+| Randomly drawn <br> rating | Adaptation of the <br> beer exportations |
 | :------ |:--- |
 | 0 - 0.5 | -40% |
 | 0.5 - 1 | -30% |
@@ -117,7 +117,7 @@ Athos therefore tries to model his behavior in the following correspondence tabl
 | 4 - 4.5 | +30% |
 | 4.5 - 5 | +40% |
 
-It means that, if a beer style in a beer consummer country recieves a rating between 1.5 and 2 in year $$[i]$$, then the weight $$w_c[i]$$ that is sent to Porthos is ''(1-10\%) = 0.9''.
+It means that, if a beer style in a beer consumming country receives a rating between 1.5 and 2 in year $$[i]$$, then the weight $$w_c[i]$$ that is sent to Porthos is (1-10\%) = 0.9.
 
 $$\quad$$ The next task is then to predict what the rating would be in each beer consuming country, for each beer style, for each year. Fortunately, thanks to the data provided by the *great druid*, it is possible to determine the distribution of ratings that a beer style will have had in each country for each year, as shown in the following graph.
 
@@ -127,18 +127,21 @@ $$\quad$$ The next task is then to predict what the rating would be in each beer
 **Note:** It's up to you, user of this sublime website, to play with the button to display these ratings densities in the countries of your choice.
 
 {: .box-note}
-**Note:** The distribution of the ratings in a country is plotted given the beer style that has been chosen to brew in the above Brewery success simulation tool to assess the affinity that your country has towards the chosen beer style.
+**Note:** The distribution of the ratings in your country is plotted given the beer style that has been chosen to brew in the above Brewery success simulation tool to assess the affinity that your country has towards the chosen beer style.
 
 $$\quad$$ However, there is still a chance factor that applies on ratings that cannot be quantified directly in a model. A random draw is thus performed according to the multinomial distribution of ratings to determine the rating of the chosen beer style in each beer consumming country for each year. This method is chosen in order to take into account the distribution of rating and the factor of chance in rating assignments.
 
 {: .box-warning}
-**Hypothesis:** When Athos studies the affinity of a country to a beer style, there might be missing data. In this case, the draw is made on a uniform score distribution. This means that the probability of obtaining the score [i] is the same for all scores.
+**Hypothesis:** When Athos studies the affinity of a country to a beer style, there might be missing data. In this case, the draw is made on a uniform score distribution. This means that the probability of obtaining the rating [r] is the same for all ratings.
 
-$$\quad$$ The above described random draw is thus performed and stored for each beer consummer country, for each year and for each beer style. A sample of the obtained Dataframe is displayed below:
+$$\quad$$ The above described random draw is thus performed and the result is stored for each beer consummer country, for each year and for each beer style. A sample of the obtained Dataframe is displayed below:
 
 ### Affinity of a country towards a certain style of beer during a chosen year
 
 <table border="1" class="dataframe" style="overflow-x: auto;">  <thead>    <tr style="text-align: center;">      <th></th>      <th></th>      <th>Ale</th>      <th>Amber Ale</th>      <th>Amber Lager</th>      <th>Belgian Ale</th>      <th>Bitter Ale</th>      <th>Bock</th>      <th>Brown Ale</th>      <th>Cider</th>      <th>Dark Ale</th>      <th>Dark Lager</th>      <th>IIPA</th>      <th>IPA</th>      <th>Lager</th>      <th>Mead</th>      <th>Pale Ale</th>      <th>Pilsener</th>      <th>Porter</th>      <th>Saké</th>      <th>Sour</th>      <th>Specialty Beer</th>      <th>Stout</th>      <th>Strong Ale</th>      <th>Wheat Beer</th>    </tr>    <tr>      <th>period</th>      <th>user_location</th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>    </tr>  </thead>  <tbody>    <tr>      <th rowspan="5" valign="top">2015.0</th>      <th>Antarctica</th>      <td>1.2</td>      <td>0.8</td>      <td>1.2</td>      <td>1.3</td>      <td>1.3</td>      <td>0.6</td>      <td>1.3</td>      <td>1.4</td>      <td>1.0</td>      <td>0.7</td>      <td>1.0</td>      <td>0.7</td>      <td>1.0</td>      <td>1.0</td>      <td>0.7</td>      <td>1.0</td>      <td>1.4</td>      <td>1.1</td>      <td>0.9</td>      <td>1.2</td>      <td>1.2</td>      <td>1.0</td>      <td>1.2</td>    </tr>    <tr>      <th>Egypt</th>      <td>1.0</td>      <td>0.9</td>      <td>0.6</td>      <td>0.7</td>      <td>0.7</td>      <td>1.0</td>      <td>1.2</td>      <td>1.1</td>      <td>1.0</td>      <td>1.0</td>      <td>1.1</td>      <td>0.9</td>      <td>0.9</td>      <td>0.8</td>      <td>1.0</td>      <td>0.7</td>      <td>1.1</td>      <td>1.1</td>      <td>0.7</td>      <td>1.3</td>      <td>1.0</td>      <td>0.9</td>      <td>0.9</td>   </tr>    <tr>      <th>Vatican City</th>      <td>1.3</td>      <td>1.1</td>      <td>0.6</td>      <td>1.4</td>      <td>1.0</td>      <td>1.4</td>      <td>0.8</td>      <td>1.3</td>      <td>1.0</td>      <td>1.1</td>      <td>1.1</td>      <td>1.0</td>      <td>0.7</td>      <td>0.9</td>      <td>0.8</td>      <td>1.0</td>      <td>1.2</td>      <td>1.4</td>      <td>0.6</td>      <td>0.9</td>      <td>1.0</td>      <td>1.0</td>      <td>1.0</td>    </tr>    <tr>      <th>Micronesia</th>      <td>0.7</td>      <td>1.0</td>      <td>1.1</td>      <td>0.7</td>      <td>0.9</td>      <td>0.8</td>      <td>1.2</td>      <td>1.0</td>      <td>1.0</td>      <td>0.6</td>      <td>0.8</td>      <td>1.4</td>      <td>0.8</td>      <td>0.7</td>     <td>1.1</td>      <td>1.0</td>      <td>1.0</td>      <td>1.4</td>      <td>1.1</td>      <td>0.7</td>      <td>0.8</td>      <td>0.6</td>      <td>0.6</td>    </tr>    <tr>      <th>Palestine</th>      <td>0.6</td>      <td>1.4</td>      <td>1.2</td>      <td>1.4</td>      <td>1.4</td>     <td>0.6</td>      <td>1.1</td>      <td>1.2</td>      <td>0.8</td>      <td>1.2</td>      <td>0.7</td>      <td>1.2</td>      <td>1.4</td>      <td>1.4</td>      <td>1.2</td>      <td>1.3</td>      <td>0.8</td>      <td>1.0</td>      <td>1.2</td>      <td>1.4</td>      <td>1.3</td>      <td>1.1</td>      <td>1.3</td>    </tr>  </tbody></table>
+
+ At the end, the output of this work consists in weights that are sent further to Porthos.
+
 
 ## *4) Study of the popularity of beer*
 
