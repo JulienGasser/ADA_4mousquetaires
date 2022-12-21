@@ -7,7 +7,6 @@ tags: [brewery, beer, flavour, taste, export, plotly]
 ---
 
  ## Once upon a time...
- 
 There was a little and gentle brewer who dreamed of spreading happiness in the world. As everyone knows, beer makes people happy, so he decided to reach his dream by creating a beer and to spread it around the world. The problem is that he sucked at market study and didn't know how to begin with his business... If he first aimed to reach as many countries as possible and secondly the most people as possible with his beer, he had to make the good choices ! Which type of beers to choose ? Where to open his brewery ? ... That's a complicated problem, isn't it ? Fortunately, Les4Mousquetaires were here to help this litte and gentle brewer by creating a tool that would help him a lot. This tool is a market simulator that will predict the spread of his beer according to the choice of his beer and brewery. Will this gentle and little brewer reach is dream ?
 
 ## Brewery success simulation tool
@@ -64,7 +63,7 @@ To easy the elaboration of this algorithm, the work was separated into three tas
 | Aramis | Already fighting against cleaning datasets        |
 
 
-## Beer export rate
+## *2) Beer export rate*
 
 D'Artagnan went in search of data to determine the **beer export rate**. He took the data from the *great druid* cleaned by Aramis and for each year, he calculated **for each beer producing country the yearly proportion of beers expected to be distributed in each beer consumming country**. He collected all these data in a **table named $$exported$$ and transmitted it to Athos and Porthos**, in order to go on with the building of the simulation algorithm.
 
@@ -91,32 +90,20 @@ Finally, D'Artagnan **plotted the detailled yearly repartition of beers expected
 * the value of a cell is $$exported_{c_0,c}[i]$$, the proportion of beers expected to be distributed from a beer producing country $$c_0$$ to a beer consumming country $$c$$ during the considered year $$i$$. 
 * a producing country with a higher number of non-zero values on a line (i.e. not white cell) exports beers to a higher number of consumming countries.
 
-## Study of the beers ratings distributions
 
-**Ajouter: Comme la step de beer export rate prend pas en compte le style de la bière, c'est moi qui ajoute la dimension de l'appréciation d'un style de bière, mettre le mot ajuster le tableau de flo**
-In the course of these various investigations, Athos decided to look more closely at the influence of the little and gentle brewer's choice of beer style.
-Noting that each style is not appreciated in the same way in all countries, he realized that exports varied significantly when the ratings were very good or very bad **ici on suppose le comportement du brewer, il paraît enthousiaste et tout donc il va s'adapter**. However, this was not an immutable and universal rule. Chance played a significant role in the equation. He knew that.
-He had his back to the wall and had to find a way to model a country's affinity for a beer style when an idea came to him. He constructed the following algorithm.
-**Refaire intro**
+## *3) Study of the beers ratings distributions*
 
+$$\quad$$ Since the step of creating the beer export table $$exported$$ does not take into account the style of the beer, the task of Athos and Porthos is to adjust the expected exports by taking into account the appreciation of a type of beer. In this chapter, Athos' tasks is developped. At the end, the output of this work consists in weights that are sent further to Porthos.
 
-Thanks to the data provided by the *great druid*, it is possible to determine the distribution of ratings that a style of beer has had **futur antérieur** in each country for each year, as shown in the following graph.
+$$\quad$$ The old musketeer, thanks to his long experience and his hard-earned data science skills, has managed to identify the little and gentle brewer. He manages to estimate his behavior by imagining the reaction he might have when analyzing the ratings his beer receives. He makes the following assumptions:
 
+* If the ratings that his beer receives in a country [c1] are very good, he adapts his production and sends more beers than initially expected to that country [c1].
 
-{% include rating_fig.html %}
+* Conversely, if the ratings his beer receives in a country [c2] are not good, he adapts his production and sends fewer beers than initially planned to this country [c2].
 
-{: .box-note}
-**Note:** It's up to you, user of this sublime website, to play with the button to display these scores in the countries of your choice.
-**Ajouter un paragraphe:** L'affinité d'un pays est calculée par rapport au style de bière qui a été choisi de brasser lors de la simulation en haut (mettre dans le note)
+Athos therefore tries to model his behavior in the following correspondence table:
 
-For a certain style chosen by the little and gentle brewer, the probability density of ratings depends on the year and the beer consumming country.
-
-A random draw is performed according to the multinomial distribution of scores to determine the rating of the chosen beer style in each beer consumming country for each year. This method is chosen in order to take into account the distribution of rating and the factor of chance in rating assignment.
-
-Also taking into account the smart mind of the little and gentle brewer, who will adapt his beer production according to the feedback he recieves form his exports, the effect of the score on beer production is quantified arbitrarily by Athos is the followng correspondence table. Notice that the minimum score is 0 and the maximum score is 5.
-**changer en fonction de la nouvelle intro**
-
-| Randomly drawn <br> score | Effect on the variation of <br> the beer exportations |
+| Randomly drawn <br> rating | Effect on the variation of <br> the beer exportations |
 | :------ |:--- |
 | 0 - 0.5 | -40% |
 | 0.5 - 1 | -30% |
@@ -129,20 +116,27 @@ Also taking into account the smart mind of the little and gentle brewer, who wil
 | 4 - 4.5 | +30% |
 | 4.5 - 5 | +40% |
 
-This means
+It means that, if a beer style in a beer consummer country recieves a rating between 1.5 and 2 in year $$[i]$$, then the weight $$w_c[i]$$ that is sent to Porthos is ''(1-10\%) = 0.9''.
 
-This basically means: if the randomly drawn rating is between 1 and 1.5 for one country, the variation of beer consummed (still for a given beer style) that is predicted by Porthos will be multiplied by 0.8 for the next year. The principle remains the same for the whole correspondence table above.
+The next task is then to predict what the rating would be in each beer consuming country, for each beer style, for each year. Fortunately, thanks to the data provided by the *great druid*, it is possible to determine the distribution of ratings that a beer style will have had in each country for each year, as shown in the following graph.
 
-Finally, the obtained weights are sent to the Porthos algorithm as $$w_c[i]$$:
-$$\Delta Var_{beer} \leftarrow \Delta Var_{beer} \cdot w_c[i]$$
+{% include rating_fig.html %}
 
-The above described algorithm is run for each year, for each country where users (beer drinkers) can be found and for each beer style. A sample of the obtained Dataframe is display in the following figure:
+{: .box-note}
+**Note:** It's up to you, user of this sublime website, to play with the button to display these ratings densities in the countries of your choice.
+
+{: .box-note}
+**Note:** The distribution of the ratings in a country is plotted given the beer style that has been chosen to brew in the above Brewery success simulation tool to assess the affinity that your country has towards the chosen beer style.
+
+$$\quad$$ However, there is still a chance factor that applies on ratings that cannot be quantified directly in a model. A random draw is thus performed according to the multinomial distribution of ratings to determine the rating of the chosen beer style in each beer consumming country for each year. This method is chosen in order to take into account the distribution of rating and the factor of chance in rating assignments.
+
+$$\quad$$ The above described random draw is thus performed and stored for each beer consummer country, for each year and for each beer style. A sample of the obtained Dataframe is displayed below:
 
 ### Affinity of a country towards a certain style of beer during a chosen year
 
 <table border="1" class="dataframe" style="overflow-x: auto;">  <thead>    <tr style="text-align: center;">      <th></th>      <th></th>      <th>Ale</th>      <th>Amber Ale</th>      <th>Amber Lager</th>      <th>Belgian Ale</th>      <th>Bitter Ale</th>      <th>Bock</th>      <th>Brown Ale</th>      <th>Cider</th>      <th>Dark Ale</th>      <th>Dark Lager</th>      <th>IIPA</th>      <th>IPA</th>      <th>Lager</th>      <th>Mead</th>      <th>Pale Ale</th>      <th>Pilsener</th>      <th>Porter</th>      <th>Saké</th>      <th>Sour</th>      <th>Specialty Beer</th>      <th>Stout</th>      <th>Strong Ale</th>      <th>Wheat Beer</th>    </tr>    <tr>      <th>period</th>      <th>user_location</th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>    </tr>  </thead>  <tbody>    <tr>      <th rowspan="5" valign="top">2015.0</th>      <th>Antarctica</th>      <td>1.2</td>      <td>0.8</td>      <td>1.2</td>      <td>1.3</td>      <td>1.3</td>      <td>0.6</td>      <td>1.3</td>      <td>1.4</td>      <td>1.0</td>      <td>0.7</td>      <td>1.0</td>      <td>0.7</td>      <td>1.0</td>      <td>1.0</td>      <td>0.7</td>      <td>1.0</td>      <td>1.4</td>      <td>1.1</td>      <td>0.9</td>      <td>1.2</td>      <td>1.2</td>      <td>1.0</td>      <td>1.2</td>    </tr>    <tr>      <th>Egypt</th>      <td>1.0</td>      <td>0.9</td>      <td>0.6</td>      <td>0.7</td>      <td>0.7</td>      <td>1.0</td>      <td>1.2</td>      <td>1.1</td>      <td>1.0</td>      <td>1.0</td>      <td>1.1</td>      <td>0.9</td>      <td>0.9</td>      <td>0.8</td>      <td>1.0</td>      <td>0.7</td>      <td>1.1</td>      <td>1.1</td>      <td>0.7</td>      <td>1.3</td>      <td>1.0</td>      <td>0.9</td>      <td>0.9</td>   </tr>    <tr>      <th>Vatican City</th>      <td>1.3</td>      <td>1.1</td>      <td>0.6</td>      <td>1.4</td>      <td>1.0</td>      <td>1.4</td>      <td>0.8</td>      <td>1.3</td>      <td>1.0</td>      <td>1.1</td>      <td>1.1</td>      <td>1.0</td>      <td>0.7</td>      <td>0.9</td>      <td>0.8</td>      <td>1.0</td>      <td>1.2</td>      <td>1.4</td>      <td>0.6</td>      <td>0.9</td>      <td>1.0</td>      <td>1.0</td>      <td>1.0</td>    </tr>    <tr>      <th>Micronesia</th>      <td>0.7</td>      <td>1.0</td>      <td>1.1</td>      <td>0.7</td>      <td>0.9</td>      <td>0.8</td>      <td>1.2</td>      <td>1.0</td>      <td>1.0</td>      <td>0.6</td>      <td>0.8</td>      <td>1.4</td>      <td>0.8</td>      <td>0.7</td>     <td>1.1</td>      <td>1.0</td>      <td>1.0</td>      <td>1.4</td>      <td>1.1</td>      <td>0.7</td>      <td>0.8</td>      <td>0.6</td>      <td>0.6</td>    </tr>    <tr>      <th>Palestine</th>      <td>0.6</td>      <td>1.4</td>      <td>1.2</td>      <td>1.4</td>      <td>1.4</td>     <td>0.6</td>      <td>1.1</td>      <td>1.2</td>      <td>0.8</td>      <td>1.2</td>      <td>0.7</td>      <td>1.2</td>      <td>1.4</td>      <td>1.4</td>      <td>1.2</td>      <td>1.3</td>      <td>0.8</td>      <td>1.0</td>      <td>1.2</td>      <td>1.4</td>      <td>1.3</td>      <td>1.1</td>      <td>1.3</td>    </tr>  </tbody></table>
 
-### ___3) Study of the popularity of beer___
+## *4) Study of the popularity of beer*
 
 $$\quad$$Once produced, the beers are exported around the world with rates studied by D'Artagnan. On its side, Athos calculated the ratings distribution depending on the year, the beer type and the country. To predict how many beers our little and gentle brewer have to produce for the following year to fit the worldwide demand for its beer, Porthos came up with an idea... 
 
