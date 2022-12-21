@@ -67,16 +67,16 @@ To easy the elaboration of this algorithm, the work was separated into three tas
 
 ## Beer export rate
 
-D'Artagnan went in search of data to determine the **beer export rate**. He took the data from the druid cleaned by Aramis and for each year, he calculated **for each beer producing country the yearly proportion of beer distributed in each beer consumming country**. He collected all these data in a **table named $$exported$$ and transmitted it to Athos**, in order to go on with the building of the simulation algorithm.
+D'Artagnan went in search of data to determine the **beer export rate**. He took the data from the *great druid* cleaned by Aramis and for each year, he calculated **for each beer producing country the yearly proportion of beers expected to be distributed in each beer consumming country**. He collected all these data in a **table named $$exported$$ and transmitted it to Athos and Porthos**, in order to go on with the building of the simulation algorithm.
 
-The table $$exported$$ is ordered as follows: $$exported_{c_0,c}[i]$$ is the proportion of beers of the beer producing country $$c_0$$ that is exported to the beer consumming country $$c$$ during the year $$i$$.
+The table $$exported$$ is ordered as follows: $$exported_{c_0,c}[i]$$ is the proportion of beers expected to be distributed from the beer producing country $$c_0$$ that is exported to the beer consumming country $$c$$ during the year $$i$$.
 
-The following **hypothesis** concerning the $$exported$$ were made : 
+The following **hypothesis** concerning the $$exported$$ table were made : 
 * each ratings is considered as a beer consummed. Thus the proportion of beers exported from a certain beer producing country to a beer consumming country during a year is calculated as the proportion of ratings for beers with a brewery in the considered beer producing country and rated by users in a consumming country during a year. 
-* the calculated proportion of beers exported from a country to another during a year represents the average proportion that would be exported from a brewery implemented in this country by the little and gentle brewer to another country.
-* this calculation assumes that the proportion of beer exportation is independant of the style of beer. Nevertheless, in the meantime, Athos was developing an analysis to take this effect into account.
+* the calculated proportion of beers exported from a country to another during a year represents the proportion that would be exported from a brewery implanted in this country by the little and gentle brewer to another country.
+* this calculation assumes that the proportion of beer exportation is independant of the beer style. Nevertheless, in the meantime, Athos and Porthos were developing an analysis to take this effect into account.
 
-At this step, D'Artagnan had a big table including 14 years, 203 beer production countries and 186 beer consuming countries. His next task was to **filter these data to help the little and gentle brewer** to decide in which country to establish its brewery. Remembering the will of the little and gentle brewer to spread its beer and thus happiness in as many countries as possible, he generated the graph (fig.'Number of beer consumming countries per beer producing country'). He **plotted the number of beer consumming countries to which the beer producing countries export** during the whole time story (i.e. 2004 to 2017). From this heavy-tailed distribution, he could **advice the little and gentle brewer to choose one beer producing country** with a high number of beer consumming countries to settle down.
+At this step, D'Artagnan had a big table including 14 years (i.e. 2004 to 2017), 203 beer production countries and 186 beer consuming countries. His next task was to **filter these data to help the little and gentle brewer** to decide in which country to establish its brewery. Remembering the first will of the little and gentle brewer to spread its beer and thus happiness in as many countries as possible, he generated the graph (fig.'Number of beer consumming countries per beer producing country'). He **plotted the number of beer consumming countries to which a beer producing country exports** during the whole time story. From this heavy-tailed distribution, he could **advice the little and gentle brewer to choose one beer producing country** with a high number of beer consumming countries to settle down.
 
 [figure1]: {% include consumingPerProducing.html %} "Figure 1"
 
