@@ -85,7 +85,6 @@ Finally, D'Artagnan **plotted the detailled yearly repartition of beers expected
 
 {% include export_beer.html %}
 
-{: .box-note} 
 **Parchment of use of the graph (fig.'Proportion of beer exported from the selected beer producing countries')**
 * each line represents one of the selected beer producing countries $$c_0$$. From bottom to top, the beer producing countries are displayed from more advised to less advised countries to install a brewery according the ranking on the figure (fig.'Proportion of beer exported from the selected beer producing countries').
 * each column represents one of the selected beer consumming countries $$c$$.
