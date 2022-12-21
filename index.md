@@ -131,6 +131,9 @@ $$\quad$$ The next task is then to predict what the rating would be in each beer
 
 $$\quad$$ However, there is still a chance factor that applies on ratings that cannot be quantified directly in a model. A random draw is thus performed according to the multinomial distribution of ratings to determine the rating of the chosen beer style in each beer consumming country for each year. This method is chosen in order to take into account the distribution of rating and the factor of chance in rating assignments.
 
+{: .box-note}
+**Hypothesis:** When Athos studies the affinity of a country to a beer style, there might be missing data. In this case, the draw is made on a uniform score distribution. This means that the probability of obtaining the score [i] is the same for all scores.
+
 $$\quad$$ The above described random draw is thus performed and stored for each beer consummer country, for each year and for each beer style. A sample of the obtained Dataframe is displayed below:
 
 ### Affinity of a country towards a certain style of beer during a chosen year
