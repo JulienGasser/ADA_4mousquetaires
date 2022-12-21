@@ -5,7 +5,7 @@
         <option value="USA">United States</option>
         <option value="GBR">United Kingdom</option>
         <option value="DEU">Germany</option>
-        <option value="CAN">Canada</option>
+        <option value="CAN" selected>Canada</option>
         <option value="ITA">Italy</option>
         <option value="FRA">France</option>
         <option value="ESP">Spain</option>
@@ -47,6 +47,7 @@
     rating_data = JSON.parse(rating_data);
     
     Plotly.newPlot('plotly-rating', rating_data['CAN']['Ale']['data'], rating_data['CAN']['Ale']['layout']);
+    Plotly.addFrames('plotly-rating', rating_data['CAN']['Ale']['frames']);
 
     // Function to update the chart when the dropdown menu selection changes
     function updateRating() {
@@ -54,6 +55,7 @@
         var country = document.getElementById('select-country-rating').value;
         var style = document.getElementById('select-beer-style').value;
         Plotly.react('plotly-rating', rating_data[country][style]['data'], rating_data[country][style]['layout']);
+        Plotly.addFrames('plotly-rating', rating_data[country][style]['frames']);
     }
     </script>
 </div>
