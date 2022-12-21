@@ -36,8 +36,6 @@ On devrait pas mélanger les balises et le markdown mais on va voir ce que ça d
 {: .box-warning}
 **Warning:** We don't now how to upload it in this website !
 
-{% include athos.html %}
-
 {% include porthos.html %}
 
 
@@ -75,7 +73,8 @@ He had his back to the wall and had to find a way to model a country's affinity 
 
 Thanks to the data provided by the druid, it is possible to determine the distribution of ratings that a style of beer has had in each country, as shown in the following graph.
 
-              **introduire le graph htlm fait par Julien**
+{% include athos.html %}
+
               
 On the latter, the distribution of the score that the young brewer can obtain depends on the style of beer he has chosen to brew, but also on the country in which D'Artagnan advises him to export these beers.
 
