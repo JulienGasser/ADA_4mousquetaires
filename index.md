@@ -12,13 +12,13 @@ There was a little and gentle brewer who dreamed of spreading happiness in the w
 
 ## Brewery success simulation tool
 
-Here is the brewery success simulation tool created by Les4Mousquetaires for the little and gentle brewer. As the latter is generous, he leaves this precious tool in open source to the internet. 
+Here is the brewery success simulation tool created by *Les4Mousquetaires* for the little and gentle brewer. As the latter is generous, he leaves this precious tool in open source to the internet. 
 
-This simulation was created to guide the little and gentle brewer when establishing its brewery in 2004. This tool takes as inputs a country where to set up a brewery and a style of beer to brew. Then, it outputs a world map with the prediction of the distribution of the beers produced by the brewery across countries and years, until 2017, for an initial expected production of 10'000 beers. In addition, given the little and gentle brewer's goal of first reaching as many countries as possible and then as many people as possible, a second graph shows the cumulative number of countries reached by its beer and the cumulative number of beers distributed across years.
+This simulation was created to guide the little and gentle brewer when establishing its brewery in 2004. This tool takes as inputs a country where to set up a brewery and a style of beer to brew. Then, it outputs a world map with the prediction of the distribution of the beers produced by the brewery across countries and years, until 2017, for an initial expected production of 10'000 beers. In addition, given the little and gentle brewer's goals of first reaching as many countries as possible and then as many people as possible, a second graph shows the cumulative number of countries reached by its beer and the cumulative number of beers distributed across years.
 
-The little and gentle brewer decided (TODO). Do you feel in you the soul of the brewer to find a better prediction than the little and gentle brewer ?
+The little and gentle brewer decided (TODO). Do you feel the soul of the brewer in you to find a better prediction than the little and gentle brewer ?
 
-A little trouble to find it or by curiosity to better understand the simulation, the following story of the little and gentle brewer and Les4Mousquetaires is waiting for you …
+A little trouble to find it or by curiosity to better understand the simulation, the following story of the little and gentle brewer and *Les4Mousquetaires* is waiting for you …
 
 ### Let's play with the simulation
 
