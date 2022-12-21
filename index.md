@@ -119,7 +119,7 @@ Athos therefore tries to model his behavior in the following correspondence tabl
 
 It means that, if a beer style in a beer consummer country recieves a rating between 1.5 and 2 in year $$[i]$$, then the weight $$w_c[i]$$ that is sent to Porthos is ''(1-10\%) = 0.9''.
 
-The next task is then to predict what the rating would be in each beer consuming country, for each beer style, for each year. Fortunately, thanks to the data provided by the *great druid*, it is possible to determine the distribution of ratings that a beer style will have had in each country for each year, as shown in the following graph.
+$$\quad$$The next task is then to predict what the rating would be in each beer consuming country, for each beer style, for each year. Fortunately, thanks to the data provided by the *great druid*, it is possible to determine the distribution of ratings that a beer style will have had in each country for each year, as shown in the following graph.
 
 {% include rating_fig.html %}
 
