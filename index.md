@@ -62,7 +62,7 @@ $$\quad$$The algorithm works as follow. First, the little and gentle brewer has 
 
 * **Step 3**:$$\quad$$ From these variations, adjust the number of beers that the little and gentle brewer have to produce for the next year.
 
-$\quad$Because of the lack of datas, Les4Mousquetaires considered that this simulation follows a pattern according the datas between 2004 and 2017. For step 2, they decided to weight the consumption variation rate with a random coefficient drawn from the beers ratings distribution to better simulate the unpredicability of the beer's world market.
+$$\quad$$Because of the lack of datas, Les4Mousquetaires considered that this simulation follows a pattern according the datas between 2004 and 2017. For step 2, they decided to weight the consumption variation rate with a random coefficient drawn from the beers ratings distribution to better simulate the unpredicability of the beer's world market.
 
 To easy the elaboration of this algorithm, the work was sepearated into three :
 
@@ -144,3 +144,40 @@ The above described algorithm is run for each year, for each country where users
 
 <table border="1" class="dataframe" style="overflow-x: auto;">  <thead>    <tr style="text-align: center;">      <th></th>      <th></th>      <th>Ale</th>      <th>Amber Ale</th>      <th>Amber Lager</th>      <th>Belgian Ale</th>      <th>Bitter Ale</th>      <th>Bock</th>      <th>Brown Ale</th>      <th>Cider</th>      <th>Dark Ale</th>      <th>Dark Lager</th>      <th>IIPA</th>      <th>IPA</th>      <th>Lager</th>      <th>Mead</th>      <th>Pale Ale</th>      <th>Pilsener</th>      <th>Porter</th>      <th>Saké</th>      <th>Sour</th>      <th>Specialty Beer</th>      <th>Stout</th>      <th>Strong Ale</th>      <th>Wheat Beer</th>    </tr>    <tr>      <th>period</th>      <th>user_location</th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>    </tr>  </thead>  <tbody>    <tr>      <th rowspan="5" valign="top">2015.0</th>      <th>Antarctica</th>      <td>1.2</td>      <td>0.8</td>      <td>1.2</td>      <td>1.3</td>      <td>1.3</td>      <td>0.6</td>      <td>1.3</td>      <td>1.4</td>      <td>1.0</td>      <td>0.7</td>      <td>1.0</td>      <td>0.7</td>      <td>1.0</td>      <td>1.0</td>      <td>0.7</td>      <td>1.0</td>      <td>1.4</td>      <td>1.1</td>      <td>0.9</td>      <td>1.2</td>      <td>1.2</td>      <td>1.0</td>      <td>1.2</td>    </tr>    <tr>      <th>Egypt</th>      <td>1.0</td>      <td>0.9</td>      <td>0.6</td>      <td>0.7</td>      <td>0.7</td>      <td>1.0</td>      <td>1.2</td>      <td>1.1</td>      <td>1.0</td>      <td>1.0</td>      <td>1.1</td>      <td>0.9</td>      <td>0.9</td>      <td>0.8</td>      <td>1.0</td>      <td>0.7</td>      <td>1.1</td>      <td>1.1</td>      <td>0.7</td>      <td>1.3</td>      <td>1.0</td>      <td>0.9</td>      <td>0.9</td>   </tr>    <tr>      <th>Vatican City</th>      <td>1.3</td>      <td>1.1</td>      <td>0.6</td>      <td>1.4</td>      <td>1.0</td>      <td>1.4</td>      <td>0.8</td>      <td>1.3</td>      <td>1.0</td>      <td>1.1</td>      <td>1.1</td>      <td>1.0</td>      <td>0.7</td>      <td>0.9</td>      <td>0.8</td>      <td>1.0</td>      <td>1.2</td>      <td>1.4</td>      <td>0.6</td>      <td>0.9</td>      <td>1.0</td>      <td>1.0</td>      <td>1.0</td>    </tr>    <tr>      <th>Micronesia</th>      <td>0.7</td>      <td>1.0</td>      <td>1.1</td>      <td>0.7</td>      <td>0.9</td>      <td>0.8</td>      <td>1.2</td>      <td>1.0</td>      <td>1.0</td>      <td>0.6</td>      <td>0.8</td>      <td>1.4</td>      <td>0.8</td>      <td>0.7</td>     <td>1.1</td>      <td>1.0</td>      <td>1.0</td>      <td>1.4</td>      <td>1.1</td>      <td>0.7</td>      <td>0.8</td>      <td>0.6</td>      <td>0.6</td>    </tr>    <tr>      <th>Palestine</th>      <td>0.6</td>      <td>1.4</td>      <td>1.2</td>      <td>1.4</td>      <td>1.4</td>     <td>0.6</td>      <td>1.1</td>      <td>1.2</td>      <td>0.8</td>      <td>1.2</td>      <td>0.7</td>      <td>1.2</td>      <td>1.4</td>      <td>1.4</td>      <td>1.2</td>      <td>1.3</td>      <td>0.8</td>      <td>1.0</td>      <td>1.2</td>      <td>1.4</td>      <td>1.3</td>      <td>1.1</td>      <td>1.3</td>    </tr>  </tbody></table>
 
+### ___3) Study of the popularity of beer___
+
+$$\quad$$Once produced, the beers are exported around the world with rates studied by D'Artagnan. On its side, Athos calculated the ratings distribution depending on the year, the beer type and the country. To predict how many beers our little and gentle brewer have to produce for the following year to fit the worldwide demand for its beer, Porthos came up with an idea... 
+
+$$\quad$$As the dataset contained ratings with the rated **beers type**, the **publication dates** and **the locations** of the users, he defines the notion of *beer's popularity*. The latter calculated the proportion of one type of beer among all the beers considered in one year and for one country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink less of this beer and vice versa. 
+
+$$\quad$$Porthos found a formula to calculate how many beers the little and gentle brewer have to produce the year $$i + 1$$ to satisfy the demand of a specific country $$c$$  : 
+
+$$
+{production_{c}[i+1] = exported_{c_0,c}[i] \times (1 +  w_{c}[i] \times \Delta popularity_{c}[i])}\newline
+$$
+
+$$
+\begin{aligned}
+&\begin{array}{ll}
+production_{c}[i+1] : & \text{number of beers to produce for the year i+1 to statisfy the demand of the country $$c$$ }\\
+exported_{c_0,c}[i] : & \text{number of beers exported for the year i in the country $c$ from the country $$c_0$$ where the brewery is located (given by D'Artagnan)}\\
+\Delta popularity_{c}[i] : & \text{difference in beer's popularity between years i+1 and i in the country $$c$$}\\
+w_{c}[i] : & \text{coefficient for year i to weight the popularity variation in the country $$c$$ (given by Athos)}\\
+\end{array}
+\end{aligned}
+$$
+
+{: .box-note} 
+**Note** : $$production_{c}$$, $$exported_{c}$$, $$\Delta popularity_{c}$$ and $$w_{c}$$ are calculated for the fixed beer's type chosen by the little and gentle brewer.
+
+$$\quad$$To calculate the $$\Delta popularity$$'s, Porthos first plotted the popularity of beers for all countries and for all types of beers during time. As the obtained curves were not smooth and regular, that isn't expected from a beer popularity evolution during time, he decided to smooth these curves out by applying a k-nearest neighbors algorithm with $$k = 5$$. His calculations are shown on the figure below.
+
+$$
+\boxed{HTML GRAPH}
+$$
+
+$$\quad$$To calculate the total production for the year i+1 :
+
+$$
+production[i+1] = \sum_{c \in Country} production_c[i]
+$$
