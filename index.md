@@ -96,7 +96,7 @@ Finally, D'Artagnan **plotted the detailled yearly repartition of beers expected
 
 $$\quad$$ Since the step of creating the beer export table $$exported$$ does not take into account the style of the beer, the task of Athos and Porthos is to adjust the expected exports by taking into account the appreciation of a type of beer. In this chapter, Athos' tasks is developped. At the end, the output of this work consists in weights that are sent further to Porthos.
 
-$$\quad$$ The old musketeer, thanks to his long experience and his hard-earned data science skills, has managed to identify the little and gentle brewer. He manages to estimate his behavior by imagining the reaction he might have when analyzing the ratings his beer receives. He makes the following assumptions:
+$$\quad$$ The old musketeer, thanks to his long experience and his hard-earned data science skills, has succeeded to identify the little and gentle brewer. He managed to estimate his behavior by imagining the reaction he might have when analyzing the ratings his beer receives. He makes the following assumptions:
 
 * If the ratings that his beer receives in a country [c1] are very good, he adapts his production and sends more beers than initially expected to that country [c1].
 
@@ -104,7 +104,7 @@ $$\quad$$ The old musketeer, thanks to his long experience and his hard-earned d
 
 Athos therefore tries to model his behavior in the following correspondence table:
 
-| Randomly drawn <br> rating | Effect on the variation of <br> the beer exportations |
+| Randomly drawn <br> rating | Adaptation of the <br> beer exportations |
 | :------ |:--- |
 | 0 - 0.5 | -40% |
 | 0.5 - 1 | -30% |
@@ -117,7 +117,7 @@ Athos therefore tries to model his behavior in the following correspondence tabl
 | 4 - 4.5 | +30% |
 | 4.5 - 5 | +40% |
 
-It means that, if a beer style in a beer consummer country recieves a rating between 1.5 and 2 in year $$[i]$$, then the weight $$w_c[i]$$ that is sent to Porthos is ''(1-10\%) = 0.9''.
+It means that, if a beer style in a beer consumming country receives a rating between 1.5 and 2 in year $$[i]$$, then the weight $$w_c[i]$$ that is sent to Porthos is (1-10\%) = 0.9.
 
 $$\quad$$ The next task is then to predict what the rating would be in each beer consuming country, for each beer style, for each year. Fortunately, thanks to the data provided by the *great druid*, it is possible to determine the distribution of ratings that a beer style will have had in each country for each year, as shown in the following graph.
 
@@ -134,7 +134,7 @@ $$\quad$$ However, there is still a chance factor that applies on ratings that c
 {: .box-warning}
 **Hypothesis:** When Athos studies the affinity of a country to a beer style, there might be missing data. In this case, the draw is made on a uniform score distribution. This means that the probability of obtaining the rating [r] is the same for all ratings.
 
-$$\quad$$ The above described random draw is thus performed and stored for each beer consummer country, for each year and for each beer style. A sample of the obtained Dataframe is displayed below:
+$$\quad$$ The above described random draw is thus performed and the result is stored for each beer consummer country, for each year and for each beer style. A sample of the obtained Dataframe is displayed below:
 
 ### Affinity of a country towards a certain style of beer during a chosen year
 
