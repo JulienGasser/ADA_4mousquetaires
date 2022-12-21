@@ -6,45 +6,36 @@ gh-repo: juliengasser/ADA4mousquetaires
 tags: [brewery, beer, flavour, taste, export, plotly]
 ---
 
-## Let's write something for our datastory !
+ ### Once upon a time...
+There was a little and gentle brewer who dreamed of spreading happiness in the world. As everyone knows, beer makes people happy, so he decided to reach his dream by creating a beer and to spread it around the world. The problem is that he sucked at market study and didn't know how to begin with his business... If he aimed to reach the most people with his beer, he had to make the good choices ! Which type of beers to choose ? Where to open his brewery ? ... That's a complicated problem, isn't it ? Fortunately, Les4Mousquetaires were here to help this litte and gentle brewer by creating a tool that would help him a lot. This tool is a market simulator that will predict the spread of his beer according to the choice of his beer and brewery. Will this gentle and little brewer reach is dream ?
 
-Her you can add some text with the markdown syntax and enjoy it online as soon as you push it on github !
-Isn'it wonderful ?
+### Brewery success simulation tool
 
-{: .box-note}
-**Note:** How ! Did I tell you I don't give you the authorization to modify my git ? Sorry...
-
-### A first fig integration
+Il faut: 1) voici le tool, 2) comment utiliser le tool (user guide), 3) dire de lire la datastory qui va amener à ce tool
 
 {% include beermap.html %}
 
-
-plein de commentaire sur cette première figure...
-
-<div id="plotly-exportfig"></div>
-
-Voici l'emplacement de la figure suivante.
+### Introduire la cummulative et afficher la nouvelle version de la figure
+Il faut: 1) Dans un premier temps, il veut exporter dans un max de pays 2) dans un 2ème temps, exporter un max de bières.
 
 <br>
 <br>
 <div id="plotly-countryfig"></div>
 
-On devrait pas mélanger les balises et le markdown mais on va voir ce que ça donne....
+### Could you do better than the gentle and little brewer?
 
-### Our main simulation
-
-{: .box-warning}
-**Warning:** We don't now how to upload it in this website !
+Il faudra donner lequel il a choisi grâce à l'outil que lui ont fourni les 4 mousquetaires.
+Dire: Lisez déjà son histoire. Une fois que ce sera fait, pourriez vous faire mieux que lui?
 
 
-### *1) Algorithm*
+### *1) Birth of the algorithm*
 
-$$\quad$$Created by Les4Mousquetaires, the above simulation is a practical tool to help the little and gentle brewer to spread happiness 🍻 around the world. But the conception of this tool was a long and perilous adventure ! Here is his story...
+$$\quad$$Created by Les4Mousquetaires, the above simulation is a practical tool to help the little and gentle brewer to spread happiness 🍻 around the world. The conception of this tool was a long and perilous adventure ! Here is the story...
 
 
 <img align="right" width="120" height="120" src="https://user-images.githubusercontent.com/77831063/208921476-d9d9df57-807e-4d7d-be22-125298e39ff0.png">
 
-$$\quad$$ The first ordeal to overcome was to find datas. After many reflections, the Les4Mousquetaires decided to ask the *great druid* for help because he was known to be a real beer lover. The *great druid* was also known for hanging out in bars all day long. So Les4Mousquetaires went to the most famous bar in town and, as expected, they found the *great druid* in a sorry state. After explaining their project, the *great druid* took out an old crystal ball from his bag and consulted the oracles to find out how the beer market would evolve in the next few years. After consultation, the *great druid* took a USB stick, plugged it into his crystal ball and saved two datasets [**RateBeer**](https://www.ratebeer.com/) and [**BeerAdvocate**](https://www.beeradvocate.com/). While giving the USB stick to the Les4Mousquetaires, as the *great druid* was a little bit wasted, he dropped it in his beer... They jumped on the beer and saved the USB stick from drowning. However, both datasets were partially corrupted. Panic-stricken by the poor state of the two datasets, Aramis decided to isolate himself to start a big cleaning process of the two datasets.
+$$\quad$$ The first ordeal to overcome was to find datas. After many reflections, *Les4Mousquetaires* decided to ask the *great druid* for help because he was known to be a real beer lover. The *great druid* was also known for hanging out in bars all day long. So Les4Mousquetaires went to the most famous bar in town and, as expected, they found the *great druid* in a sorry state. After explaining their project, the *great druid* took out an old crystal ball from his bag and consulted the oracles to find out how the beer market would evolve in the next few years. After consultation, the *great druid* took a USB stick, plugged it into his crystal ball and saved two datasets [**RateBeer**](https://www.ratebeer.com/) and [**BeerAdvocate**](https://www.beeradvocate.com/). While giving the USB stick to *Les4Mousquetaires*, as the *great druid* was a little bit wasted, he dropped it in his beer... They jumped on the beer and saved the USB stick from drowning. However, both datasets were partially corrupted. Panic-stricken by the poor state of the two datasets, Aramis decided to isolate himself to start a big cleaning process of the two datasets.
 
 $$\quad$$On their side, D'Artagnan, Athos and Porthos sat down around a table and started to elaborate the tool to help the little and gentle brewer. Based on the two datasets being cleaned by Aramis, they decided to create an interative algorithm divided into 3 steps. This algorithm is explained below : 
 
@@ -52,7 +43,7 @@ $$\quad$$On their side, D'Artagnan, Athos and Porthos sat down around a table an
 
 $$\quad$$The algorithm works as follow. First, the little and gentle brewer has to choose, as input, the type of beers that he want to produce and the country where he want to open his brewery. Then, the next three steps are iterated across the years :
 
-* **Step 1**:$$\quad$$ Given an number of beers produced for one year and in the chosen brewery location, estimate how many beers are exported (or not) $$\quad\quad\quad \ \ \$$ in each country this year.
+* **Step 1**:$$\quad$$ Given an number of beers produced for one year and in the chosen brewery location, estimate how many beers are exported (or not) in each country this year.
 
 
 * **Step 2**:$$\quad$$ Estimate how the consumption of this beer will vary in each country during one year. Weight these consumption variation. 
