@@ -94,7 +94,7 @@ Finally, D'Artagnan **plotted the detailled yearly repartition of beers expected
 
 ## *3) Study of the beers ratings distributions*
 
-$$\quad$$ Since the step of creating the beer export table $$exported$$ does not take into account the style of the beer, the task of Athos and Porthos is to adjust the expected exports by taking into account the appreciation of a type of beer. In this chapter, Athos' tasks is developped.
+$$\quad$$ Since the step of creating the beer export table $$exported$$ does not take into account the style of the beer, the task of Athos and Porthos is to adjust the expected exports by taking into account the impact of a certain type of beer. In this chapter, Athos' tasks is developped.
 
 $$\quad$$ The old musketeer, thanks to his long experience and his hard-earned data science skills, has succeeded to identify the little and gentle brewer. He managed to estimate his behavior by imagining the reaction he might have when analyzing the ratings his beer receives. He makes the following assumptions:
 
