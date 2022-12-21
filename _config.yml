@@ -21,7 +21,7 @@ author: Julien Gasser, Florent Aviolat, Damien Gomez Donoso, Jérémie Veuthey
 
 navbar-links:
   About Us: "aboutme"
-  Assumptions : "Assumptions"
+  Assumptions : "assumptions"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
