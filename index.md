@@ -105,19 +105,19 @@ He had his back to the wall and had to find a way to model a country's affinity 
 
 Thanks to the data provided by the *great druid*, it is possible to determine the distribution of ratings that a style of beer has had **futur antérieur** in each country for each year, as shown in the following graph.
 
-**Ajouter un paragraphe:** L'affinité d'un pays est calculée par rapport au style de bière qui a été choisi de brasser lors de la simulation en haut
 
 {% include rating_fig.html %}
 
-              
-On this graph, the distribution of the score that the little and gentle brewer can obtain depends on the beer style he has chosen to brew, but also on the countries in which a beer is expected to be exported from the table $$exported$$.
-
 {: .box-note}
 **Note:** It's up to you, user of this sublime website, to play with the button to display these scores in the countries of your choice.
+**Ajouter un paragraphe:** L'affinité d'un pays est calculée par rapport au style de bière qui a été choisi de brasser lors de la simulation en haut (mettre dans le note)
 
-Then, a random draw is performed according to the multinomial distribution of scores to take into account the factor of chance in assigning a score.
+For a certain style chosen by the little and gentle brewer, the probability density of ratings depends on the year and the beer consumming country.
+
+A random draw is performed according to the multinomial distribution of scores to determine the rating of the chosen beer style in each beer consumming country for each year. This method is chosen in order to take into account the distribution of rating and the factor of chance in rating assignment.
 
 Also taking into account the smart mind of the little and gentle brewer, who will adapt his beer production according to the feedback he recieves form his exports, the effect of the score on beer production is quantified arbitrarily by Athos is the followng correspondence table. Notice that the minimum score is 0 and the maximum score is 5.
+**changer en fonction de la nouvelle intro**
 
 | Randomly drawn <br> score | Effect on the variation of <br> the beer exportations |
 | :------ |:--- |
@@ -132,7 +132,9 @@ Also taking into account the smart mind of the little and gentle brewer, who wil
 | 4 - 4.5 | +30% |
 | 4.5 - 5 | +40% |
 
-This basically means: if the randomly drawn score is between 1 and 1.5 for one country, the variation of beer consummed (still for a given beer style) that is predicted by Porthos will be multiplied by 0.8 for the next year. The principle remains the same for the whole correspondence table above.
+This means
+
+This basically means: if the randomly drawn rating is between 1 and 1.5 for one country, the variation of beer consummed (still for a given beer style) that is predicted by Porthos will be multiplied by 0.8 for the next year. The principle remains the same for the whole correspondence table above.
 
 Finally, the obtained weights are sent to the Porthos algorithm as $$w_c[i]$$:
 $$\Delta Var_{beer} \leftarrow \Delta Var_{beer} \cdot w_c[i]$$
