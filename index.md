@@ -6,37 +6,61 @@ gh-repo: juliengasser/ADA4mousquetaires
 tags: [brewery, beer, flavour, taste, export, plotly]
 ---
 
-## Let's write something for our datastory !
+ ## Once upon a time...
+ 
+There was a little and gentle brewer who dreamed of spreading happiness in the world. As everyone knows, beer makes people happy, so he decided to reach his dream by creating a beer and to spread it around the world. The problem is that he sucked at market study and didn't know how to begin with his business... If he aimed to reach the most people with his beer, he had to make the good choices ! Which type of beers to choose ? Where to open his brewery ? ... That's a complicated problem, isn't it ? Fortunately, Les4Mousquetaires were here to help this litte and gentle brewer by creating a tool that would help him a lot. This tool is a market simulator that will predict the spread of his beer according to the choice of his beer and brewery. Will this gentle and little brewer reach is dream ?
 
-Her you can add some text with the markdown syntax and enjoy it online as soon as you push it on github !
-Isn'it wonderful ?
+## Brewery success simulation tool
 
-{: .box-note}
-**Note:** How ! Did I tell you I don't give you the authorization to modify my git ? Sorry...
+Il faut: 1) voici le tool, 2) comment utiliser le tool (user guide), 3) dire de lire la datastory qui va amener à ce tool
 
-### A first fig integration
+### Let's play with the simulation
 
 {% include beermap.html %}
 
-
-plein de commentaire sur cette première figure...
-
-<div id="plotly-exportfig"></div>
-
-Voici l'emplacement de la figure suivante.
+### Introduire la cummulative et afficher la nouvelle version de la figure
+Il faut: 1) Dans un premier temps, il veut exporter dans un max de pays 2) dans un 2ème temps, exporter un max de bières.
 
 <br>
 <br>
 <div id="plotly-countryfig"></div>
 
-On devrait pas mélanger les balises et le markdown mais on va voir ce que ça donne....
+### Could you do better than the gentle and little brewer?
 
-### Our main simulation
+Il faudra donner lequel il a choisi grâce à l'outil que lui ont fourni les 4 mousquetaires.
+Dire: Lisez déjà son histoire. Une fois que ce sera fait, pourriez vous faire mieux que lui?
 
-{: .box-warning}
-**Warning:** We don't now how to upload it in this website !
 
-{% include porthos.html %}
+### *1) Birth of the algorithm*
+
+$$\quad$$Created by Les4Mousquetaires, the above simulation is a practical tool to help the little and gentle brewer to spread happiness 🍻 around the world. The conception of this tool was a long and perilous adventure ! Here is the story...
+
+
+<img align="right" width="120" height="120" src="https://user-images.githubusercontent.com/77831063/208921476-d9d9df57-807e-4d7d-be22-125298e39ff0.png">
+
+$$\quad$$ The first ordeal to overcome was to find datas. After many reflections, *Les4Mousquetaires* decided to ask the *great druid* for help because he was known to be a real beer lover. The *great druid* was also known for hanging out in bars all day long. So Les4Mousquetaires went to the most famous bar in town and, as expected, they found the *great druid* in a sorry state. After explaining their project, the *great druid* took out an old crystal ball from his bag and consulted the oracles to find out how the beer market would evolve in the next few years. After consultation, the *great druid* took a USB stick, plugged it into his crystal ball and saved two datasets [**RateBeer**](https://www.ratebeer.com/) and [**BeerAdvocate**](https://www.beeradvocate.com/). While giving the USB stick to *Les4Mousquetaires*, as the *great druid* was a little bit wasted, he dropped it in his beer... They jumped on the beer and saved the USB stick from drowning. However, both datasets were partially corrupted. Panic-stricken by the poor state of the two datasets, Aramis decided to isolate himself to start a big cleaning process of the two datasets.
+
+$$\quad$$On their side, D'Artagnan, Athos and Porthos sat down around a table and started to elaborate the tool to help the little and gentle brewer. Based on the two datasets being cleaned by Aramis, they decided to create an interative algorithm divided into 3 steps. This algorithm is explained below and illustrated on a parchment: 
+
+<img align="right" width="120" height="120" src="https://user-images.githubusercontent.com/77831063/208921468-755e4e4a-eddd-4035-a6fb-8e9f15db28c8.png">
+
+$$\quad$$The algorithm works as follow. First, the little and gentle brewer has to choose, as input, the type of beers that he wants to produce and the country where he wants to open his brewery. Then, the next three steps are iterated across the years :
+
+* **Step 1**:$$\quad$$At the start of the year, the number of beers expected to be distributed during this year is divided in shares of beers that are allocated to different beer consumming countries. This is the **exportation rate** step.
+
+
+* **Step 2**:$$\quad$$ Estimate how beer exports will vary during the year, based on the **popularity of beer** and the **affinity that the country has for a style of beer**. This resulting number of beers that will be effectively consummed this current year.
+
+* **Step 3**:$$\quad$$ The number of beers expected to be distributed during the next year (step 1, next iteration) is taken as the effectively consummed number of beers this current year.
+
+To easy the elaboration of this algorithm, the work was sepearated into three :
+
+| Who $$\quad\quad\quad $$ | Task |
+| :--       | :--   |
+| D'Artagnan       | Study of the beers exportation rates       |
+| Athos   | Study of the beers ratings distributions        |
+| Porthos   | Study of the beers consumption variations        |
+| Aramis | Already fighting against cleaning datasets        |
 
 
 ## Beer export rate
@@ -109,3 +133,36 @@ The above described algorithm is run for each year, for each country where users
 
 <table border="1" class="dataframe" style="overflow-x: auto;">  <thead>    <tr style="text-align: center;">      <th></th>      <th></th>      <th>Ale</th>      <th>Amber Ale</th>      <th>Amber Lager</th>      <th>Belgian Ale</th>      <th>Bitter Ale</th>      <th>Bock</th>      <th>Brown Ale</th>      <th>Cider</th>      <th>Dark Ale</th>      <th>Dark Lager</th>      <th>IIPA</th>      <th>IPA</th>      <th>Lager</th>      <th>Mead</th>      <th>Pale Ale</th>      <th>Pilsener</th>      <th>Porter</th>      <th>Saké</th>      <th>Sour</th>      <th>Specialty Beer</th>      <th>Stout</th>      <th>Strong Ale</th>      <th>Wheat Beer</th>    </tr>    <tr>      <th>period</th>      <th>user_location</th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>      <th></th>    </tr>  </thead>  <tbody>    <tr>      <th rowspan="5" valign="top">2015.0</th>      <th>Antarctica</th>      <td>1.2</td>      <td>0.8</td>      <td>1.2</td>      <td>1.3</td>      <td>1.3</td>      <td>0.6</td>      <td>1.3</td>      <td>1.4</td>      <td>1.0</td>      <td>0.7</td>      <td>1.0</td>      <td>0.7</td>      <td>1.0</td>      <td>1.0</td>      <td>0.7</td>      <td>1.0</td>      <td>1.4</td>      <td>1.1</td>      <td>0.9</td>      <td>1.2</td>      <td>1.2</td>      <td>1.0</td>      <td>1.2</td>    </tr>    <tr>      <th>Egypt</th>      <td>1.0</td>      <td>0.9</td>      <td>0.6</td>      <td>0.7</td>      <td>0.7</td>      <td>1.0</td>      <td>1.2</td>      <td>1.1</td>      <td>1.0</td>      <td>1.0</td>      <td>1.1</td>      <td>0.9</td>      <td>0.9</td>      <td>0.8</td>      <td>1.0</td>      <td>0.7</td>      <td>1.1</td>      <td>1.1</td>      <td>0.7</td>      <td>1.3</td>      <td>1.0</td>      <td>0.9</td>      <td>0.9</td>   </tr>    <tr>      <th>Vatican City</th>      <td>1.3</td>      <td>1.1</td>      <td>0.6</td>      <td>1.4</td>      <td>1.0</td>      <td>1.4</td>      <td>0.8</td>      <td>1.3</td>      <td>1.0</td>      <td>1.1</td>      <td>1.1</td>      <td>1.0</td>      <td>0.7</td>      <td>0.9</td>      <td>0.8</td>      <td>1.0</td>      <td>1.2</td>      <td>1.4</td>      <td>0.6</td>      <td>0.9</td>      <td>1.0</td>      <td>1.0</td>      <td>1.0</td>    </tr>    <tr>      <th>Micronesia</th>      <td>0.7</td>      <td>1.0</td>      <td>1.1</td>      <td>0.7</td>      <td>0.9</td>      <td>0.8</td>      <td>1.2</td>      <td>1.0</td>      <td>1.0</td>      <td>0.6</td>      <td>0.8</td>      <td>1.4</td>      <td>0.8</td>      <td>0.7</td>     <td>1.1</td>      <td>1.0</td>      <td>1.0</td>      <td>1.4</td>      <td>1.1</td>      <td>0.7</td>      <td>0.8</td>      <td>0.6</td>      <td>0.6</td>    </tr>    <tr>      <th>Palestine</th>      <td>0.6</td>      <td>1.4</td>      <td>1.2</td>      <td>1.4</td>      <td>1.4</td>     <td>0.6</td>      <td>1.1</td>      <td>1.2</td>      <td>0.8</td>      <td>1.2</td>      <td>0.7</td>      <td>1.2</td>      <td>1.4</td>      <td>1.4</td>      <td>1.2</td>      <td>1.3</td>      <td>0.8</td>      <td>1.0</td>      <td>1.2</td>      <td>1.4</td>      <td>1.3</td>      <td>1.1</td>      <td>1.3</td>    </tr>  </tbody></table>
 
+### ___3) Study of the popularity of beer___
+
+$$\quad$$Once produced, the beers are exported around the world with rates studied by D'Artagnan. On its side, Athos calculated the ratings distribution depending on the year, the beer type and the country. To predict how many beers our little and gentle brewer have to produce for the following year to fit the worldwide demand for its beer, Porthos came up with an idea... 
+
+$$\quad$$As the dataset contained ratings with the rated **beers type**, the **publication dates** and **the locations** of the users, he defines the notion of *beer's popularity*. The latter calculated the proportion of one type of beer among all the beers considered in one year and for one country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink less of this beer and vice versa. 
+
+$$\quad$$Porthos found a formula to calculate how many beers the little and gentle brewer have to produce the year $$i + 1$$ to satisfy the demand of a specific country $$c$$  : 
+
+\\[production_{c}[i+1] = exported_{c_0,c}[i] \times (1 +  w_{c}[i] \times \Delta popularity_{c}[i])\\]
+
+\\[
+\begin{aligned}
+&\begin{array}{ll}
+production_{c}[i+1] : & \text{number of beers to produce for the year i+1 to statisfy the demand of the country $$c$$ }\\
+exported_{c_0,c}[i] : & \text{number of beers exported for the year i in the country $c$ from the country $$c_0$$ where the brewery is located (given by D'Artagnan)}\\
+\Delta popularity_{c}[i] : & \text{difference in beer's popularity between years i+1 and i in the country $$c$$}\\
+w_{c}[i] : & \text{coefficient for year i to weight the popularity variation in the country $$c$$ (given by Athos)}\\
+\end{array}
+\end{aligned}
+\\]
+
+{: .box-note} 
+**Note** : $$production_{c}$$, $$exported_{c}$$, $$\Delta popularity_{c}$$ and $$w_{c}$$ are calculated for the fixed beer's type chosen by the little and gentle brewer.
+
+$$\quad$$To calculate the $$\Delta popularity$$'s, Porthos first plotted the popularity of beers for all countries and for all types of beers during time. As the obtained curves were not smooth and regular, that isn't expected from a beer popularity evolution during time, he decided to smooth these curves out by applying a k-nearest neighbors algorithm with $$k = 5$$. His calculations are shown on the figure below.
+
+{% include porthos.html %}
+
+$$\quad$$To calculate the total production for the year i+1 :
+
+$$
+production[i+1] = \sum_{c \in Country} production_c[i]
+$$
