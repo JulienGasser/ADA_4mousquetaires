@@ -102,7 +102,7 @@ $$\quad$$ The old musketeer, thanks to his long experience and his hard-earned d
 
 Athos therefore tried to model his behavior in the following correspondence table:
 
-| Average rating of <br> the beer style | Adaptation of the <br> beer exportations | Corresponding adaptation rate <br> on the beer exports |
+| Average rating of <br> the beer style | Adaptation of the <br> beer exportations | Corresponding adaptation<br>rate on the beer exports |
 | :------ |:--- | :--- |
 | 0 - 0.5 | -40% | 0.6 |
 | 0.5 - 1 | -30% | 0.7 |
