@@ -1,7 +1,7 @@
 <div>
-    <!-- Dropdown menu to select data to display -->
-    <p>Select a country where you construct your brewery:</p>
-    <select id="select-country" onchange="updatePlot()">
+    <script>{% include rating.json %}</script>
+    <p>Select a country of interest:</p>
+    <select id="select-country-rating" onchange="updateRating()">
         <option value="USA">United States</option>
         <option value="GBR">United Kingdom</option>
         <option value="DEU">Germany</option>
@@ -40,34 +40,20 @@
         <option value="THA">Thailand</option>
         <option value="VNM">Vietnam</option>
     </select>
-    <p>Select a country where you construct your brewery:</p>
-    <select id="select-beer-style" onchange="updatePlot(); updateRating()">
-        <option value="Ale">Ale</option>
-        <option value="Amber Ale">Amber Ale</option>
-        <option value="Amber Lager">Amber Lager</option>
-        <option value="Belgian Ale">Belgian Ale</option>
-        <option value="Bitter Ale">Bitter Ale</option>
-        <option value="Bock">Bock</option>
-        <option value="Brown Ale">Brown Ale</option>
-        <option value="Cider">Cider</option>
-        <option value="Dark Ale">Dark Ale</option>
-        <option value="Dark Lager">Dark Lager</option>
-        <option value="IIPA">IIPA</option>
-        <option value="IPA">IPA</option>
-        <option value="Lager">Lager</option>
-        <option value="Mead">Mead</option>
-        <option value="Pale Ale">Pale Ale</option>
-        <option value="Pilsener">Pilsener</option>
-        <option value="Porter">Porter</option>
-        <option value="Saké">Saké</option>
-        <option value="Sour">Sour</option>
-        <option value="Specialty Beer">Specialty Beer</option>
-        <option value="Stout">Stout</option>
-        <option value="Strong Ale">Strong Ale</option>
-        <option value="Wheat Beer">Wheat Beer</option>
-    </select>
-    <!-- Div to hold the plotly chart -->
     <br>
     <br>
-    <div id="plotly-beermap"></div>
+    <div id="plotly-rating"></div>
+    <script>
+    rating_data = JSON.parse(rating_data);
+    
+    Plotly.newPlot('plotly-rating', rating_data['CAN']['Ale']['data'], rating_data['CAN']['Ale']['layout']);
+
+    // Function to update the chart when the dropdown menu selection changes
+    function updateRating() {
+        // Get the selected data from the dropdown menu
+        var country = document.getElementById('select-country-rating').value;
+        var style = document.getElementById('select-beer-style').value;
+        Plotly.react('plotly-rating', rating_data[country][style]['data'], rating_data[country][style]['layout']);
+    }
+    </script>
 </div>
