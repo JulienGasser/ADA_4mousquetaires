@@ -26,3 +26,7 @@ This story studies the distribution of beers across time and space. However, reg
 
 {% include rating_brew.html %}
 
+
+### Assumption 4
+Dire comme quoi le rating d'une bière dépend uniquement du style de la bière
+
