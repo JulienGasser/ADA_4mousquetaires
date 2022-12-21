@@ -95,16 +95,22 @@ Finally, D'Artagnan **plotted the detailled yearly repartition of beers expected
 
 
 ## Study of the beers ratings distributions
-In the course of these various investigations, Athos decided to look more closely at the influence of the small brewer's choice of beer style.
-Noting that each style is not appreciated in the same way in all countries, he realized that exports varied significantly when the ratings were very good or very bad. However, this was not an immutable and universal rule. Chance played a significant role in the equation. He knew that.
-He had his back to the wall and had to find a way to model a country's affinity for a style of beer when an idea came to him. He constructed the following algorithm.
 
-Thanks to the data provided by the druid, it is possible to determine the distribution of ratings that a style of beer has had in each country, as shown in the following graph.
+**Ajouter: Comme la step de beer export rate prend pas en compte le style de la bière, c'est moi qui ajoute la dimension de l'appréciation d'un style de bière, mettre le mot ajuster le tableau de flo**
+In the course of these various investigations, Athos decided to look more closely at the influence of the little and gentle brewer's choice of beer style.
+Noting that each style is not appreciated in the same way in all countries, he realized that exports varied significantly when the ratings were very good or very bad **ici on suppose le comportement du brewer, il paraît enthousiaste et tout donc il va s'adapter**. However, this was not an immutable and universal rule. Chance played a significant role in the equation. He knew that.
+He had his back to the wall and had to find a way to model a country's affinity for a beer style when an idea came to him. He constructed the following algorithm.
+**Refaire intro**
+
+
+Thanks to the data provided by the *great druid*, it is possible to determine the distribution of ratings that a style of beer has had **futur antérieur** in each country for each year, as shown in the following graph.
+
+**Ajouter un paragraphe:** L'affinité d'un pays est calculée par rapport au style de bière qui a été choisi de brasser lors de la simulation en haut
 
 {% include rating_fig.html %}
 
               
-On the latter, the distribution of the score that the young brewer can obtain depends on the style of beer he has chosen to brew, but also on the country in which D'Artagnan advises him to export these beers.
+On this graph, the distribution of the score that the little and gentle brewer can obtain depends on the beer style he has chosen to brew, but also on the countries in which a beer is expected to be exported from the table $$exported$$.
 
 {: .box-note}
 **Note:** It's up to you, user of this sublime website, to play with the button to display these scores in the countries of your choice.
