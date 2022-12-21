@@ -12,24 +12,23 @@ There was a little and gentle brewer who dreamed of spreading happiness in the w
 
 ## Brewery success simulation tool
 
-Il faut: 1) voici le tool, 2) comment utiliser le tool (user guide), 3) dire de lire la datastory qui va amener à ce tool
+Here is the brewery success simulation tool created by Les4Mousquetaires for the little and gentle brewer. As the latter is generous, he leaves this precious tool in open source to the internet. 
+
+This simulation was created to guide the little and gentle brewer when establishing its brewery in 2004. This tool takes as inputs a country where to set up a brewery and a style of beer to brew. Then, it outputs a world map with the prediction of the distribution of the beers produced by the brewery across countries and years, until 2017, for an initial expected production of 10'000 beers. In addition, given the little and gentle brewer's goal of first reaching as many countries as possible and then as many people as possible, a second graph shows the cumulative number of countries reached by its beer and the cumulative number of beers distributed across years.
+
+The little and gentle brewer decided (TODO). Do you feel in you the soul of the brewer to find a better prediction than the little and gentle brewer ?
+
+A little trouble to find it or by curiosity to better understand the simulation, the following story of the little and gentle brewer and Les4Mousquetaires is waiting for you …
 
 ### Let's play with the simulation
 
 {% include beermap.html %}
 
-### Introduire la cummulative et afficher la nouvelle version de la figure
-Il faut: 1) Dans un premier temps, il veut exporter dans un max de pays 2) dans un 2ème temps, exporter un max de bières.
-
 <br>
 <br>
 <div id="plotly-countryfig"></div>
 
-### Could you do better than the gentle and little brewer?
-
-Il faudra donner lequel il a choisi grâce à l'outil que lui ont fourni les 4 mousquetaires.
-Dire: Lisez déjà son histoire. Une fois que ce sera fait, pourriez vous faire mieux que lui?
-
+## Story of the little and gentle brewer and Les4Mousquetaires
 
 ### *1) Birth of the algorithm*
 
