@@ -46,15 +46,12 @@ $$\quad$$On their side, D'Artagnan, Athos and Porthos sat down around a table an
 
 $$\quad$$The algorithm works as follow. First, the little and gentle brewer has to choose, as input, the type of beers that he wants to produce and the country where he wants to open his brewery. Then, the next three steps are iterated across the years :
 
-* **Step 1**:$$\quad$$At the start of the year, the number of beers expected to be distributed during this year is divided in shares of beers that are allocated to different beer consumming countries.
+* **Step 1**:$$\quad$$At the start of the year, the number of beers expected to be distributed during this year is divided in shares of beers that are allocated to different beer consumming countries. This is the **exportation rate** step.
 
 
-* **Step 2**:$$\quad$$ Estimate how the consumption of this beer will vary in each country during one year. Weight these consumption variation. 
+* **Step 2**:$$\quad$$ Estimate how beer exports will vary during the year, based on the **popularity of beer** and the **affinity that the country has for a style of beer**. This resulting number of beers that will be effectively consummed this current year.
 
-
-* **Step 3**:$$\quad$$ From these variations, adjust the number of beers that the little and gentle brewer have to produce for the next year.
-
-$$\quad$$Because of the lack of datas, Les4Mousquetaires considered that this simulation follows a pattern according the datas between 2004 and 2017. For step 2, they decided to weight the consumption variation rate with a random coefficient drawn from the beers ratings distribution to better simulate the unpredicability of the beer's world market.
+* **Step 3**:$$\quad$$ The number of beers expected to be distributed during the next year (step 1, next iteration) is taken as the effectively consummed number of beers this current year.
 
 To easy the elaboration of this algorithm, the work was sepearated into three :
 
