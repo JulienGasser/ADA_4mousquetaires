@@ -53,13 +53,15 @@ $$\quad$$The algorithm works as follow. First, the little and gentle brewer has 
 
 * **Step 3**:$$\quad$$ The number of beers expected to be distributed during the next year (step 1, next iteration) is taken as the effectively consummed number of beers this current year.
 
-To easy the elaboration of this algorithm, the work was sepearated into three :
+$$\quad$$ The output of this algorithm is the brewery success simulation tool. **Il faut dire encore des trucs sur les courbes obtenues, mais ça va dépendre de ce qu'on a mis dans le paragraphe introductif.**
+
+To easy the elaboration of this algorithm, the work was separated into three tasks:
 
 | Who $$\quad\quad\quad $$ | Task |
 | :--       | :--   |
 | D'Artagnan       | Study of the beers exportation rates       |
 | Athos   | Study of the beers ratings distributions        |
-| Porthos   | Study of the beers consumption variations        |
+| Porthos   | Study of the popularity of beer        |
 | Aramis | Already fighting against cleaning datasets        |
 
 
