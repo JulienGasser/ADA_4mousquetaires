@@ -86,6 +86,9 @@ social-network-links:
 # --- General options --- #
 ###########################
 
+# D'artagnan
+baseurl: "/ADA4mousquetaires"
+
 # Select which social network share links to show in posts
 share-links-active:
   twitter: false
