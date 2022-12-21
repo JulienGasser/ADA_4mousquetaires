@@ -36,7 +36,42 @@ On devrait pas mélanger les balises et le markdown mais on va voir ce que ça d
 {: .box-warning}
 **Warning:** We don't now how to upload it in this website !
 
-{% include porthos.html %}
+
+### *1) Algorithm*
+
+$$\quad$$Created by Les4Mousquetaires, the above simulation is a practical tool to help the little and gentle brewer to spread happiness 🍻 around the world. But the conception of this tool was a long and perilous adventure ! Here is his story...
+
+
+<img align="right" width="120" height="120" src="druide.png">
+
+$$\quad$$ The first ordeal to overcome was to find datas. After many reflections, the Les4Mousquetaires decided to ask the *great druid* for help because he was known to be a real beer lover. The *great druid* was also known for hanging out in bars all day long. So Les4Mousquetaires went to the most famous bar in town and, as expected, they found the *great druid* in a sorry state. After explaining their project, the *great druid* took out an old crystal ball from his bag and consulted the oracles to find out how the beer market would evolve in the next few years. After consultation, the *great druid* took a USB stick, plugged it into his crystal ball and saved two datasets [**RateBeer**](https://www.ratebeer.com/) and [**BeerAdvocate**](https://www.beeradvocate.com/). While giving the USB stick to the Les4Mousquetaires, as the *great druid* was a little bit wasted, he dropped it in his beer... They jumped on the beer and saved the USB stick from drowning. However, both datasets were partially corrupted. Panic-stricken by the poor state of the two datasets, Aramis decided to isolate himself to start a big cleaning process of the two datasets.
+
+$$\quad$$On their side, D'Artagnan, Athos and Porthos sat down around a table and started to elaborate the tool to help the little and gentle brewer. Based on the two datasets being cleaned by Aramis, they decided to create an interative algorithm divided into 3 steps. This algorithm is explained below : 
+
+$$
+\boxed{ALGO PARCHEMIN}
+$$
+
+$$\quad$$The algorithm works as follow. First, the little and gentle brewer has to choose, as input, the type of beers that he want to produce and the country where he want to open his brewery. Then, the next three steps are iterated across the years :
+
+* **Step 1**:$$\quad$$ Given an number of beers produced for one year and in the chosen brewery location, estimate how many beers are exported (or not) $$\quad\quad\quad \ \ \$$ in each country this year.
+
+
+* **Step 2**:$$\quad$$ Estimate how the consumption of this beer will vary in each country during one year. Weight these consumption variation. 
+
+
+* **Step 3**:$$\quad$$ From these variations, adjust the number of beers that the little and gentle brewer have to produce for the next year.
+
+$\quad$Because of the lack of datas, Les4Mousquetaires considered that this simulation follows a pattern according the datas between 2004 and 2017. For step 2, they decided to weight the consumption variation rate with a random coefficient drawn from the beers ratings distribution to better simulate the unpredicability of the beer's world market.
+
+To easy the elaboration of this algorithm, the work was sepearated into three :
+
+| Who $$\quad\quad\quad $$ | Task |
+| :--       | :--   |
+| D'Artagnan       | Study of the beers exportation rates       |
+| Athos   | Study of the beers ratings distributions        |
+| Porthos   | Study of the beers consumption variations        |
+| Aramis | Already fighting against cleaning datasets        |
 
 
 ## Beer export rate
