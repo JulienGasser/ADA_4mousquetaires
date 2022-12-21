@@ -84,6 +84,7 @@ On the latter, the distribution of the score that the young brewer can obtain de
 Then, a random draw is performed according to the multinomial distribution of scores to take into account the factor of chance in assigning a score.
 
 Also taking into account the smart mind of the little and gentle brewer, who will adapt his beer production according to the feedback he recieves form his exports, the effect of the score on beer production is quantified arbitrarily by Athos is the followng correspondence table. Notice that the minimum score is 0 and the maximum score is 5.
+
 | Randomly drawn <br> score | Effect on the variation of <br> the beer exportations |
 | :------ |:--- |
 | 0 - 0.5 | -40% |
@@ -99,8 +100,8 @@ Also taking into account the smart mind of the little and gentle brewer, who wil
 
 This basically means: if the randomly drawn score is between 1 and 1.5 for one country, the variation of beer consummed (still for a given beer style) that is predicted by Porthos will be multiplied by 0.8 for the next year. The principle remains the same for the whole correspondence table above.
 
-Finally, the obtained weights are sent to the Porthos algorithm as $w_c[i]$:
-$\Delta Var_{beer} \leftarrow \Delta Var_{beer} \cdot w_c[i]$
+Finally, the obtained weights are sent to the Porthos algorithm as $$w_c[i]$$:
+$$\Delta Var_{beer} \leftarrow \Delta Var_{beer} \cdot w_c[i]$$
 
 The above described algorithm is run for each year, for each country where users (beer drinkers) can be found and for each beer style. A sample of the obtained Dataframe is display in the following figure:
 
