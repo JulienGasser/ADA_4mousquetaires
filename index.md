@@ -77,8 +77,6 @@ The following **hypothesis** concerning the $$exported$$ table were made :
 
 At this step, D'Artagnan had a big table including 14 years (i.e. 2004 to 2017), 203 beer production countries and 186 beer consuming countries. His next task was to **filter these data to help the little and gentle brewer** to decide in which country to establish its brewery. Remembering the first will of the little and gentle brewer to spread its beer and thus happiness in as many countries as possible, he generated the graph (fig.'Number of beer consumming countries per beer producing country'). He **plotted the number of beer consumming countries to which a beer producing country exports** during the whole time story. From this heavy-tailed distribution, he could **advice the little and gentle brewer to choose one beer producing country** that reach a high number of beer consumming countries to settle down.
 
-**renommer le titre et enlever les html**
-
 {% include consumingPerProducing.html %}
 
 Finally, D'Artagnan **plotted the detailled yearly repartition of beers expected to be distributed from some beer producing countries**. For display purpose, he opted to show the following subset from the $$exported$$ table. He selected the top ten of advised beer producing countries (on the plot (fig.'Number of beer consumming countries per beer producing country'), this corresponds to countries with a number of consumming country above the red line) and five other random countries. Then, he kept the beer consumming countries that contributed at least a proportion of 0.008 of the beers exported from the selected beer producing countries. The objective of this plot is to represent the annual evolution of the exports of the top-ten beer producing countries that D'Artagan advised to the little and gentle brewer and to compare them to less-optimal ones. He also wanted to illustrate the table $$exported$$ with this subset of data through this figure (fig.'Proportion of beer exported from the selected beer producing countries').
@@ -131,10 +129,17 @@ $$\quad$$ The next task is then to predict what the rating would be in each beer
 {: .box-note}
 **Note:** The distribution of the ratings in your country is plotted given the beer style that has been chosen to brew in the above Brewery success simulation tool to assess the affinity that your country has towards the chosen beer style.
 
-$$\quad$$ However, there is still a chance factor that applies on ratings that cannot be quantified directly in a model. A random draw is thus performed according to the multinomial distribution of ratings to determine the rating of the chosen beer style in each beer consumming country for each year. This method is chosen in order to take into account the distribution of rating and the factor of chance in rating assignments.
+
+
+# A compléter jerem
+
+$$\quad$$ A random draw is performed according to the multinomial distribution of ratings to determine the rating of the chosen beer style in each beer consumming country for each year. This method is chosen in order to take into account the distribution of rating and the factor of randomness in rating assignments.
+following the assumption that the avg rating is randomly chosen following this distribution
+Pour un année, pour un certain style, pays (blabla), on suppose que l'espérence de la distribution donne le rating moyen pour ce style, d
+**Le fait qu'il y ait de bons ratings, ça dépend de bcp de choses. Comme on peut pas tout considérer, on choisit de traduire cette incertitude à travers un random draw qui suit la distribution multinomiale des ratings.**
 
 {: .box-warning}
-**Hypothesis:** When Athos studied the affinity of a country to a beer style, there might be missing data. In this case, the draw is made on a uniform score distribution. This means that the probability of obtaining the rating [r] is the same for all ratings.
+**Hypothesis:** When Athos studied the affinity of a country to a beer style, there might be missing data. For example, if in 2015 in Spain there are no ratings for Ale style, the draw is made on a uniform rating distribution.
 
 $$\quad$$ The above described random draw was thus performed and the result was stored for each beer consumming country, for each year and for each beer style. A sample of the obtained Dataframe is displayed below:
 
