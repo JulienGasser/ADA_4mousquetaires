@@ -39,7 +39,9 @@ $$\quad$$ The first ordeal to overcome was to find datas. After many reflections
 
 $$\quad$$On their side, D'Artagnan, Athos and Porthos sat down around a table and started to elaborate the tool to help the little and gentle brewer. Based on the two datasets being cleaned by Aramis, they decided to create an interative algorithm divided into 3 steps. This algorithm is explained below and illustrated on a parchment: 
 
+<p align="center">
 <img align="center" width="480" height="480" src="https://user-images.githubusercontent.com/77831063/208921468-755e4e4a-eddd-4035-a6fb-8e9f15db28c8.png">
+</p>
 
 $$\quad$$The algorithm works as follow. First, the little and gentle brewer has to choose, as input, the type of beers that he wants to produce and the country where he wants to open his brewery. Then, the next three steps are iterated across the years :
 
