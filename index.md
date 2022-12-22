@@ -149,35 +149,37 @@ $$\quad$$ At the end, the output of this work consisted in all the corresponding
 
 ## *4) Study of the popularity of beer*
 
-$$\quad$$ As explained in the previous chapters, Porthos' work was complementary to that done by Athos. He took the $$weightings$$ table of Athos and the $$expected_exports$$ table of D'Artagnan and used them 
+$$\quad$$ As explained in the previous chapters, Porthos' work was complementary to that done by Athos. He took the complementary $$weightings$$ table of Athos and the $$expected.export$$ table of D'Artagnan and used them in his model. In the following chapter, Porthos' task is described. The pooling of all tasks in the simulation aglorithm is also shown.
 
-$$\quad$$Once produced, the beers are exported around the world with rates studied by D'Artagnan. On its side, Athos calculated the ratings distribution depending on the year, the beer type and the country. To predict how many beers our little and gentle brewer have to produce for the following year to fit the worldwide demand for its beer, Porthos came up with an idea... 
+$$\quad$$As the dataset contained ratings with the rated **beers type**, the **publication dates** and **the locations** of the users, Porthos first defined the notion of *beer's popularity*. The latter calculated the proportion of one type of beer among all the rated beers considered in one year and for one country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink a lower proportion of this beer style compared to other beer styles in the same beer consuming country and vice versa.
 
-$$\quad$$As the dataset contained ratings with the rated **beers type**, the **publication dates** and **the locations** of the users, he defined the notion of *beer's popularity*. The latter calculated the proportion of one type of beer among all the rated beers considered in one year and for one country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink a lower proportion of this beer style and vice versa.
+$$\quad$$ Porthos first defined the variation of popularity: $$\Delta popularity$$'s. It must have represented the variation of the proportion of the number of ratings of a given beer style in a given beer consumming country within a year.
 
-$$\quad$$Porthos found a formula to calculate how many beers the little and gentle brewer have to produce the year $$i + 1$$ to satisfy the demand of a specific country $$c$$  : 
+$$\quad$$ To evaluate this, he plotted the popularity of beers for all countries and for all types of beers during time. As the obtained curves were not smooth and regular, Pothos had the feeling that the latter did not represent well the evolution of a beer popularity within a year. He thus decided to smooth these curves out by applying a k-nearest neighbors algorithm with $$k = 5$$. His calculations are shown on the figure below.
 
-\\[production_{c}[i+1] = exported_{c_0,c}[i] \times (1 +  w_{c}[i] \times \Delta popularity_{c}[i])\\]
+{% include porthos.html %}
+
+$$\quad$$ He then created a table $$popularity.variations$$, in which the coefficient $$popularity.variations_{c,s}[i]$$ represents the variation rate of the proportion of the number of ratings of a beer style $$s$$ in a beer consummer country $$c$$ during the year $$i$$. To obtain a multiplicative facor from this rate, one should add the scalar $$1$$ to it.
+
+$$\quad$$ Porthos finally gathered his work and that of his partners to calculate how many beers the little and gentle brewer will have produced the year $$i$$. He first picked the expected exports computed by D'Artagnan. Then, he multiplied the expected exports by the weights that are given by Athos that expressed the affinity a country has towards a beer style. Finally, he multiplied this result by the muliplicative factor $$(1 + popularity.variations_{c}[i])$$ in order to take into account the variation in popularity of a beer style during the coming year. The above paragraph can be summarized with the following formula:
+
+\\[exportation_{c}[i] = expected.export_{c_0,c}[i] \times weightings_{c,s}[i] \times (1 + popularity.variations_{c}[i])\\]
 
 \\[
 \begin{aligned}
 &\begin{array}{ll}
-production_{c}[i+1] : & \text{number of beers to produce for the year i+1 to statisfy the demand of the country $$c$$ }\\
-exported_{c_0,c}[i] : & \text{number of beers exported for the year i in the country $c$ from the country $$c_0$$ where the brewery is located (given by D'Artagnan)}\\
-\Delta popularity_{c}[i] : & \text{difference in beer's popularity between years i+1 and i in the country $$c$$}\\
-w_{c}[i] : & \text{coefficient for year i to weight the popularity variation in the country $$c$$ (given by Athos)}\\
+exportation_{c}[i] : & \text{number of beers that is effectively exported for the year i}\\
+expected.export_{c_0,c}[i] : & \text{number of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located (given by D'Artagnan)}\\
+popularity.variations_{c}[i] : & \text{variations of the beer style popularity between years i+1 and i in the beer conumming country $$c$$}\\
+weightings_{c,s}[i] : & \text{coefficient for year i to weight the exports estimating the affinity of a beer conummer country towards a beer style $$s$$}\\
 \end{array}
 \end{aligned}
 \\]
 
 {: .box-note} 
-**Note** : $$production_{c}$$, $$exported_{c}$$, $$\Delta popularity_{c}$$ and $$w_{c}$$ are calculated for the fixed beer's type chosen by the little and gentle brewer.
+**Note** : $$exportation_{c}[i]$$ is always calculated for the fixed beer style chosen by the little and gentle brewer.
 
-$$\quad$$To calculate the $$\Delta popularity$$'s, Porthos first plotted the popularity of beers for all countries and for all types of beers during time. As the obtained curves were not smooth and regular, that isn't expected from a beer popularity evolution during time, he decided to smooth these curves out by applying a k-nearest neighbors algorithm with $$k = 5$$. His calculations are shown on the figure below.
-
-{% include porthos.html %}
-
-$$\quad$$To calculate the total production for the year i+1 :
+$$\quad$$ At the end, to calculate the total production for the year i+1, the following sum is computed:
 
 $$
 production[i+1] = \sum_{c \in Country} production_c[i]
