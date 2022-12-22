@@ -19,13 +19,16 @@ The team is composed of 4 valiant musketeers, presented from left to right:
  2) Julien Gasser <br>
  - Master 3 : Electrical engineering <br>
  - Aka : Aramis <br>
+ - Description : Although he grew up in a monastery, he became a musketeer rather than a priest due to a somewhat tumultuous youth. He plans to join the DataScience administration as soon as EPFL has a new heir to the throne.
 
 
  3) Jérémie Veuthey <br>
  - Master 3 : Energy Science and technology <br>
  - Aka : Athos <br>
-
-
+ - Description : He is the most aristocratic of the three musketeers, but also the oldest. He is a father figure to the other musketeers and is the most experienced data scientist.
+ 
+ 
  4) Damien Gomez Donoso <br>
  - Master 1 : Data Science <br>
  - Aka : Porthos <br>
+ - Description : A bon vivant, Porthos maintains a passion for the pleasures of life. He considers himself a true Data Scientist. It is in order to marry a rich and famous researcher in Data Science that he soon retires.
