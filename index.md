@@ -149,13 +149,13 @@ $$\quad$$ At the end, the output of this work consisted in all the corresponding
 
 ## *4) Study of the popularity of beer*
 
-$$\quad$$ As explained in the previous chapters, Porthos' work was complementary to that done by Athos. He took the complementary $$weightings$$ table of Athos and the $$expected.export$$ table of D'Artagnan and used them in his model. In the following chapter, Porthos' task is described. The pooling of all tasks in the simulation aglorithm is also shown.
+$$\quad$$ As explained in the previous chapters, Porthos' work was complementary to that done by Athos. He took the complementary table $$weightings$$ of Athos and the $$expected.export$$ table of D'Artagnan and used them in his model. In the following chapter, Porthos' task is described. The pooling of all tasks in the simulation aglorithm is also shown.
 
-$$\quad$$As the dataset contained ratings with the rated **beers type**, the **publication dates** and **the locations** of the users, Porthos first defined the notion of *beer's popularity*. The latter calculated the proportion of one type of beer among all the rated beers considered in one year and for one country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink a lower proportion of this beer style compared to other beer styles in the same beer consuming country and vice versa.
+$$\quad$$As the dataset contained ratings with the rated **beers type**, the **publication dates** and **the locations** of the users, Porthos first defined the notion of *beer's popularity*. The latter is calculated as the proportion of one type of beer among all the rated beers considered in one year and for one country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink a lower proportion of this beer style compared to other in the same beer consuming country and vice versa.
 
-$$\quad$$ Porthos first defined the variation of popularity: $$\Delta popularity$$'s. It must have represented the variation of the proportion of the number of ratings of a given beer style in a given beer consumming country within a year.
+$$\quad$$ Porthos defined the variation of popularity: $$\Delta popularity$$. It represents the variation of the proportion of the number of ratings of a given beer style in a given beer consuming country between two years.
 
-$$\quad$$ To evaluate this, he plotted the popularity of beers for all countries and for all types of beers during time. As the obtained curves were not smooth and regular, Pothos had the feeling that the latter did not represent well the evolution of a beer popularity within a year. He thus decided to smooth these curves out by applying a k-nearest neighbors algorithm with $$k = 5$$. His calculations are shown on the figure below.
+$$\quad$$ To evaluate this, he plotted the *beer's popularity* for all countries and for all types of beers across years. As the obtained curves were not smooth and regular, Porthos had the feeling that the latter did not represent well a plausible evolution of a beer popularity within a year. He thus decided to smooth these curves out by applying a k-nearest neighbors algorithm with $$k = 5$$. His calculations are shown on the figure below.
 
 {% include porthos.html %}
 
