@@ -168,7 +168,7 @@ $$\quad$$ At that time, all tools were ready to build the algorithm.
 
 $$\quad$$ As a final step, *Les4mousquetaires* gathered their work to calculate how many beers the little and gentle brewer will have produced the year $$i$$ considering his **brewery location** and **beer style** choices. They first picked the expected exports computed by D'Artagnan from the table $expected.export$. Then, they multiplied the expected exports by the weights that are given by Athos in $$weightings$$ that expressed the affinity that a country had towards a *beer style* during a specific year. Finally, he multiplied this result by the muliplicative factor $$(1 + popularity.variations_{c}[i])$$ in order to take into account the variation in *beer's popularity* of a *beer style* during the considered year. The above paragraph can be summarized with the following formula:
 
-\\[exportation_{c}[i] = expected.export_{c_0,c}[i] \times weightings_{c,s}[i] \times (1 + popularity.variations_{c}[i])\\]
+\\[exportation_{c}[i] = expected.number[i] \times expected.export_{c_0,c}[i] \times weightings_{c,s}[i] \times (1 + popularity.variations_{c}[i])\\]
 
 
 
@@ -177,6 +177,7 @@ $$\quad$$ As a final step, *Les4mousquetaires* gathered their work to calculate 
 \begin{aligned}
 &\begin{array}{ll}
 exportation_{c}[i] : & \text{adjusted number of beers that is effectively exported for the year i}\\
+expected.number[i] : & \text{expected number of beers to be exported, estimated at the beginning of the year i before the musketeers adjustments}
 expected.export_{c_0,c}[i] : & \text{number of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located}\\
 popularity.variations_{c}[i] : & \text{variation rate of the beer style popularity between years i+1 and i in the beer consuming country $$c$$}\\
 weightings_{c,s}[i] : & \text{coefficient for year i to weight the exports estimating the affinity of a beer consuming country towards a beer style $$s$$}\\
@@ -184,8 +185,10 @@ weightings_{c,s}[i] : & \text{coefficient for year i to weight the exports estim
 \end{aligned}
 \\]
 
-$$\quad$$ At the end, to calculate the total production for the year i+1, the following sum is computed:
+At that time, the total exports of the little and gentle brewer corresponds to the sum of all exports over all beer consuming countries:
 
 $$
-production[i+1] = \sum_{c \in Country} production_c[i]
+Total\_exports = \sum_{c \in Country} exportation_{c}[i]
 $$
+
+$$\quad$$ At the end, to calculate the total production for the year i+1, the following sum is computed:
