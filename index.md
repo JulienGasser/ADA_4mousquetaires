@@ -149,9 +149,9 @@ $$\quad$$ At the end, the output of this work consisted in all the corresponding
 
 ## *4) Study of the popularity of beer*
 
-$$\quad$$ As explained in the previous chapters, Porthos' work was complementary to that done by Athos. He took the complementary table $$weightings$$ of Athos and the $$expected.export$$ table of D'Artagnan and used them in his model. In the following chapter, Porthos' task is described. The pooling of all tasks in the simulation aglorithm is also shown.
+$$\quad$$ As explained in the previous chapters, Porthos' work was complementary to that done by Athos regarding the objective to assess the beer style dependence on the number of beers exported.
 
-$$\quad$$As the dataset contained ratings with the rated **beers type**, the **publication dates** and **the locations** of the users, Porthos first defined the notion of *beer's popularity*. The latter is calculated as the proportion of one type of beer among all the rated beers considered in one year and for one country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink a lower proportion of this beer style compared to other in the same beer consuming country and vice versa.
+$$\quad$$As the dataset contained ratings with the rated **beer style**, the **publication dates** and **the locations** of the users, Porthos first defined the notion of *beer's popularity*. The latter is calculated as the proportion of one type of beer among all the rated beers considered in one year and for one country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink a lower proportion of this beer style compared to other in the same beer consuming country and vice versa.
 
 $$\quad$$ Porthos defined the variation of popularity: $$\Delta popularity$$. It represents the variation of the proportion of the number of ratings of a given beer style in a given beer consuming country between two years.
 
@@ -159,25 +159,30 @@ $$\quad$$ To evaluate this, he plotted the *beer's popularity* for all countries
 
 {% include porthos.html %}
 
-$$\quad$$ He then created a table $$popularity.variations$$, in which the coefficient $$popularity.variations_{c,s}[i]$$ represents the variation rate of the proportion of the number of ratings of a beer style $$s$$ in a beer consummer country $$c$$ during the year $$i$$. To obtain a multiplicative facor from this rate, one should add the scalar $$1$$ to it.
+$$\quad$$ He then created a table $$popularity.variations$$, in which the coefficient $$popularity.variations_{c,s}[i]$$ represents the variation rate of the proportion of the number of ratings of a beer style $$s$$ in a beer consummer country $$c$$ during the year $$i$$. To obtain a multiplicative factor from this rate, one should add the scalar $$1$$ to it.
 
-$$\quad$$ Porthos finally gathered his work and that of his partners to calculate how many beers the little and gentle brewer will have produced the year $$i$$. He first picked the expected exports computed by D'Artagnan. Then, he multiplied the expected exports by the weights that are given by Athos that expressed the affinity a country has towards a beer style. Finally, he multiplied this result by the muliplicative factor $$(1 + popularity.variations_{c}[i])$$ in order to take into account the variation in popularity of a beer style during the coming year. The above paragraph can be summarized with the following formula:
+$$\quad$$ At that time, all tools were ready to build the algorithm.
+
+
+## *5) Gathering of all tasks*
+
+$$\quad$$ As a final step, *Les4mousquetaires* gathered their work to calculate how many beers the little and gentle brewer will have produced the year $$i$$ considering his **brewery location** and **beer style** choices. They first picked the expected exports computed by D'Artagnan from the table $expected.export$. Then, they multiplied the expected exports by the weights that are given by Athos in $$weightings$$ that expressed the affinity that a country had towards a *beer style* during a specific year. Finally, he multiplied this result by the muliplicative factor $$(1 + popularity.variations_{c}[i])$$ in order to take into account the variation in *beer's popularity* of a *beer style* during the considered year. The above paragraph can be summarized with the following formula:
 
 \\[exportation_{c}[i] = expected.export_{c_0,c}[i] \times weightings_{c,s}[i] \times (1 + popularity.variations_{c}[i])\\]
 
+
+
+**copy-paste pour la partie Gomez**
 \\[
 \begin{aligned}
 &\begin{array}{ll}
-exportation_{c}[i] : & \text{number of beers that is effectively exported for the year i}\\
-expected.export_{c_0,c}[i] : & \text{number of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located (given by D'Artagnan)}\\
-popularity.variations_{c}[i] : & \text{variations of the beer style popularity between years i+1 and i in the beer conumming country $$c$$}\\
-weightings_{c,s}[i] : & \text{coefficient for year i to weight the exports estimating the affinity of a beer conummer country towards a beer style $$s$$}\\
+exportation_{c}[i] : & \text{adjusted number of beers that is effectively exported for the year i}\\
+expected.export_{c_0,c}[i] : & \text{number of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located}\\
+popularity.variations_{c}[i] : & \text{variation rate of the beer style popularity between years i+1 and i in the beer consuming country $$c$$}\\
+weightings_{c,s}[i] : & \text{coefficient for year i to weight the exports estimating the affinity of a beer consuming country towards a beer style $$s$$}\\
 \end{array}
 \end{aligned}
 \\]
-
-{: .box-note} 
-**Note** : $$exportation_{c}[i]$$ is always calculated for the fixed beer style chosen by the little and gentle brewer.
 
 $$\quad$$ At the end, to calculate the total production for the year i+1, the following sum is computed:
 
