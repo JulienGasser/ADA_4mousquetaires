@@ -187,7 +187,7 @@ $$weightings_{c,s}[i]$$ : coefficient for year i to weight the exports estimatin
 At that time, the total exports of the little and gentle brewer corresponds to the sum of all exports over all beer consuming countries:
 
 $$
-Total\_exports = \sum_{c \in Country} exportation_{c}[i]
+Total.exports = \sum_{c \in Country} exportation_{c}[i]
 $$
 
 $$\quad$$ At the end, to calculate the total production for the year i+1, the following sum is computed:
