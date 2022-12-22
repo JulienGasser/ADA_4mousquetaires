@@ -148,9 +148,7 @@ $$\quad$$ At the end, the output of this work consisted in all the corresponding
 
 ## *4) Study of the popularity of beer*
 
-**To continue the work of Athos, reprendre un peu la suite de mon idée plus haut**
-Porthos prend la table weightings pour l'introduire dans son modèle.
-Mettre les trucs au passé
+$$\quad$$ As explained in the previous chapters, Porthos' work was complementary to that done by Athos. He took the $$weightings$$ table of Athos and the $$expected_exports$$ table of D'Artagnan and used them 
 
 $$\quad$$Once produced, the beers are exported around the world with rates studied by D'Artagnan. On its side, Athos calculated the ratings distribution depending on the year, the beer type and the country. To predict how many beers our little and gentle brewer have to produce for the following year to fit the worldwide demand for its beer, Porthos came up with an idea... 
 
