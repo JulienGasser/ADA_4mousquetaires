@@ -155,7 +155,7 @@ $$\quad$$As the dataset contained ratings with the rated **beers type**, the **p
 
 $$\quad$$ Porthos defined the variation of popularity: $$\Delta popularity$$. It represents the variation of the proportion of the number of ratings of a given beer style in a given beer consuming country between two years.
 
-$$\quad$$ To evaluate this, he plotted the *beer's popularity* for all countries and for all types of beers across years. As the obtained curves were not smooth and regular, Porthos had the feeling that the latter did not represent well a plausible evolution of a beer popularity within a year. He thus decided to smooth these curves out by applying a k-nearest neighbors algorithm with $$k = 5$$. His calculations are shown on the figure below.
+$$\quad$$ To evaluate this, he plotted the *beer's popularity* for all countries and for all types of beers across years. Porthos had the feeling that the latter did not represent well a plausible evolution of *beer's popularity* within a year, as too abrupt. He thus decided to smooth these curves out by applying a k-nearest neighbors algorithm with $$k = 5$$. His calculations are shown on the figure below.
 
 {% include porthos.html %}
 
