@@ -69,7 +69,9 @@ To easy the elaboration of this algorithm, the work was separated into three tas
 
 ## *2) Beer export rate*
 
-D'Artagnan went in search of data to determine the **beer export rate**. He took the data from the *great druid* cleaned by Aramis. As the dataset contained **beer ratings with the user countries, the brewery countries and the posting dates**, he calculated **for each year, for each beer producing country the proportion of beers expected to be distributed in each beer consumming country**. He collected all these data in a **table named $$expected.export$$ and transmitted it to Athos and Porthos**, in order to go on with the building of the simulation algorithm.
+At the beginning of the year $$i$$, a certain number of beers is expected to be exported during the year: $$expected.number[i]$$. The objective of D'Artagnan was first to determine the expected **beer export rate**. 
+
+He took the data from the *great druid* cleaned by Aramis. As the dataset contained **beer ratings with the user countries, the brewery countries and the posting dates**, he calculated **for each year, for each beer producing country the proportion of beers expected to be distributed in each beer consumming country**. He collected all these data in a **table named $$expected.export$$ and transmitted it to Athos and Porthos**, in order to go on with the building of the simulation algorithm.
 
 The table $$expected.export$$ is ordered as follows: $$expected.export_{c_0,c}[i]$$ is the proportion of beers expected to be distributed from the beer producing country $$c_0$$ that is exported to the beer consumming country $$c$$ during the year $$i$$.
 
@@ -96,7 +98,7 @@ Finally, D'Artagnan **plotted the detailled yearly repartition of beers expected
 
 ## *3) Study of the beers ratings distributions*
 
-$$\quad$$ Since the step of creating the beer export table $$expected.export$$ did not take into account the style of the beer, the task of Athos and Porthos was to adjust the expected exports by taking into account the impact of a certain type of beer. In this chapter, Athos' tasks is developped.
+$$\quad$$ Since the step of creating the beer export table $$expected.export$$ did not take into account the style of the beer, the task of Athos and Porthos was to adjust the expected production $$expected.number[i]$$ defined at the beginning of the year by taking into account the impact of a certain type of beer. In this chapter, Athos' tasks is developped.
 
 $$\quad$$ The old musketeer, thanks to his long experience and his hard-earned data science skills, had succeeded to identify the little and gentle brewer. He had managed to estimate the brewer behavior by imagining the reaction he might have had when analyzing the ratings his beer would have received. He made the following assumptions:
 
@@ -149,7 +151,7 @@ $$\quad$$ At the end, the output of this work consisted in all the corresponding
 
 ## *4) Study of the popularity of beer*
 
-$$\quad$$ As explained in the previous chapters, Porthos' work was complementary to that done by Athos regarding the objective to assess the beer style dependence on the number of beers exported.
+$$\quad$$ As explained in the previous chapters, Porthos' work was complementary to that done by Athos regarding the objective to assess the beer style dependence on the expected production $$expected.number[i]$$ defined at the beginning of the year.
 
 $$\quad$$As the dataset contained ratings with the rated **beer style**, the **publication dates** and **the locations** of the users, Porthos first defined the notion of *beer's popularity*. The latter is calculated as the proportion of one type of beer among all the rated beers considered in one year and for one country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink a lower proportion of this beer style compared to other in the same beer consuming country and vice versa.
 
@@ -184,10 +186,15 @@ $$popularity.variations_{c}[i]$$ : variation rate of the beer style popularity b
 
 $$weightings_{c,s}[i]$$ : coefficient for year i to weight the exports estimating the affinity of a beer consuming country towards a beer style $$s$$
 
-At that time, the total exports of the little and gentle brewer corresponds to the sum of all exports over all beer consuming countries:
+After these adjustments, for the year $$i$$ the total exports of the little and gentle brewer corresponds to the sum of all exports over all beer consuming countries:
 
 $$
-Total.exports = \sum_{c \in Country} exportation_{c}[i]
+Total.exports[i] = \sum_{c \in Country} exportation_{c}[i]
 $$
 
-$$\quad$$ At the end, to calculate the total production for the year i+1, the following sum is computed:
+$$\quad$$ At the beginning of the simulation, the expected production $$expected.number[2004]$$ is set to 10'000. Then, for the next years, the expected production $$expected.number[i]$$ for the year $$i$$ defined at the beginning of the year, is taken as the total exports of the year $$i-1$$. Id est:
+
+
+$$
+expected.number[i] = Total.exports[i-1]
+$$
