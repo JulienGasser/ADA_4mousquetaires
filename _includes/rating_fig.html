@@ -47,6 +47,7 @@
     rating_data = JSON.parse(rating_data);
     
     Plotly.newPlot('plotly-rating', rating_data['CAN']['Ale']['data'], rating_data['CAN']['Ale']['layout']);
+    rating_data['CAN']['Ale']['layout']['sliders'][0]['active']=11;
     Plotly.addFrames('plotly-rating', rating_data['CAN']['Ale']['frames']);
 
     // Function to update the chart when the dropdown menu selection changes
@@ -54,8 +55,10 @@
         // Get the selected data from the dropdown menu
         var country = document.getElementById('select-country-rating').value;
         var style = document.getElementById('select-beer-style').value;
+        rating_data[country][style]['layout']['sliders'][0]['active']=11;
         Plotly.react('plotly-rating', rating_data[country][style]['data'], rating_data[country][style]['layout']);
         Plotly.addFrames('plotly-rating', rating_data[country][style]['frames']);
+        
     }
     </script>
 </div>
