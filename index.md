@@ -145,9 +145,13 @@ $$\quad$$ The above described random draw was thus performed and the results wer
 
 ## *4) Study of the popularity of beer*
 
+**To continue the work of Athos, reprendre un peu la suite de mon idée plus haut**
+Porthos prend la table weightings pour l'introduire dans son modèle.
+Mettre les trucs au passé
+
 $$\quad$$Once produced, the beers are exported around the world with rates studied by D'Artagnan. On its side, Athos calculated the ratings distribution depending on the year, the beer type and the country. To predict how many beers our little and gentle brewer have to produce for the following year to fit the worldwide demand for its beer, Porthos came up with an idea... 
 
-$$\quad$$As the dataset contained ratings with the rated **beers type**, the **publication dates** and **the locations** of the users, he defines the notion of *beer's popularity*. The latter calculated the proportion of one type of beer among all the beers considered in one year and for one country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink less of this beer and vice versa. 
+$$\quad$$As the dataset contained ratings with the rated **beers type**, the **publication dates** and **the locations** of the users, he defined the notion of *beer's popularity*. The latter calculated the proportion of one type of beer among all the rated beers considered in one year and for one country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink a lower proportion of this beer style and vice versa.
 
 $$\quad$$Porthos found a formula to calculate how many beers the little and gentle brewer have to produce the year $$i + 1$$ to satisfy the demand of a specific country $$c$$  : 
 
