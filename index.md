@@ -116,7 +116,7 @@ Athos therefore tried to model his behavior in the following correspondence tabl
 | 4.5 - 5 | +40% | 1.4 |
 
 
-This table means that, if a beer style in a beer consumming country receives a rating between 1.5 and 2 in year $$[i]$$, then the corresponding adaptation rate is (1-10\%) = 0.9.
+This table means that, if a beer style in a beer consumming country received a rating between 1.5 and 2 in year $$[i]$$, then the corresponding adaptation rate was (1-10\%) = 0.9.
 
 
 $$\quad$$ The next task was then to predict what the rating would have been in each beer consuming country, for each beer style, for each year. Fortunately, thanks to the data provided by the *great druid*, it was possible to determine the distribution of ratings that a beer style will have had in each country for each year, as shown in the following graph.
@@ -130,10 +130,10 @@ $$\quad$$ The next task was then to predict what the rating would have been in e
 **Note:** The distribution of the ratings in your country is plotted given the beer style that has been chosen to brew in the above Brewery success simulation tool to assess the affinity that your country has towards the chosen beer style.
 
 
-$$\quad$$ A random draw has also been performed according to the multinomial distribution of ratings to determine the rating of the chosen beer style in each beer consumming country for each year. This method had been chosen in order to take into account the distribution of rating and the factor of randomness in rating assignments. Indeed, a user's evaluation depended on many different factors. Since all these factors could not be taken into account, Athos assumed that the value of a rating was based on the multinomial distribution described above and that the uncertainty induced by the more complex factors could be translated by a random draw on this probability density.
+$$\quad$$ A random draw has also been performed according to the multinomial distribution of ratings to determine the rating of the chosen beer style in each beer consumming country for each year. This method had been chosen in order to take into account the distribution of rating and the factor of randomness in rating assignments. Indeed, a user's evaluation depended on many different factors. Since all these factors could not be taken into account, Athos assumed that the value of a rating was based on the multinomial distribution abovely described and that the uncertainty induced by the more complex factors could be translated by a random draw on this probability density.
 
 {: .box-warning}
-**Hypothesis:** When Athos studied the affinity of a country to a beer style, there may have been missing values. For example, if in 2015 in Spain there were no ratings for Ale style, the draw was made on a uniform rating distribution.
+**Hypothesis:** When Athos studied the affinity of a country to a beer style, there may have been missing values. For example, if in 2015 in Spain there were no ratings for Ale style. In these cases, the draw was made on a uniform rating distribution.
 
 $$\quad$$ The above described random draw was thus performed and the results were stored for each beer consumming country, for each year and for each beer style. A sample of the obtained Dataframe is displayed below:
 
