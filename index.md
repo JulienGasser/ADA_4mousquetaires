@@ -71,7 +71,7 @@ To easy the elaboration of this algorithm, the work was separated into three tas
 
 At the beginning of the year $$i$$, a certain number of beers is expected to be exported during the year: $$expected.number[i]$$. The objective of D'Artagnan was first to determine the expected **beer export rate**. 
 
-He took the data from the *great druid* cleaned by Aramis. As the dataset contained **beer ratings with the user countries, the brewery countries and the posting dates**, he calculated **for each year, for each beer producing country the proportion of beers expected to be distributed in each beer consumming country**. He collected all these data in a **table named $$expected.export$$ and transmitted it to Athos and Porthos**, in order to go on with the building of the simulation algorithm.
+He took the data from the *great druid* cleaned by Aramis. As the dataset contained **beer ratings with the user countries, the brewery countries and the posting dates**, he calculated **for each year, for each beer producing country the proportion of beers expected to be distributed in each beer consumming country**. He collected all these data in a table named $$proportion.export$$ to build later the simulation algorithm.
 
 The table $$expected.export$$ is ordered as follows: $$expected.export_{c_0,c}[i]$$ is the proportion of beers expected to be distributed from the beer producing country $$c_0$$ that is exported to the beer consumming country $$c$$ during the year $$i$$.
 
@@ -147,7 +147,7 @@ $$\quad$$ The above described random draw was thus performed and the results wer
 
 <table border="1" class="dataframe">   <thead>     <tr style="text-align: right;">       <th></th>       <th></th>       <th>Ale</th>       <th>Belgian Ale</th>       <th>Bock</th>       <th>IPA</th>       <th>Pilsener</th>       <th>Wheat Beer</th>       <th>IIPA</th>     </tr>     <tr>       <th>period</th>       <th>user_location</th>       <th></th>       <th></th>       <th></th>       <th></th>       <th></th>       <th></th>       <th></th>     </tr>   </thead>   <tbody>     <tr>       <th rowspan="5" valign="top">2015.0</th>       <th>United States</th>       <td>0.6</td>       <td>1.2</td>       <td>1.2</td>       <td>1.0</td>       <td>1.0</td>       <td>0.9</td>       <td>1.3</td>     </tr>     <tr>       <th>United Kingdom</th>       <td>0.6</td>       <td>0.9</td>       <td>0.7</td>       <td>1.0</td>       <td>1.0</td>       <td>1.2</td>       <td>0.8</td>     </tr>     <tr>       <th>Brazil</th>       <td>1.0</td>       <td>1.4</td>       <td>0.8</td>       <td>0.7</td>       <td>1.2</td>       <td>0.6</td>       <td>0.6</td>     </tr>     <tr>       <th>Canada</th>       <td>1.3</td>       <td>0.7</td>       <td>0.7</td>       <td>0.6</td>       <td>0.7</td>       <td>0.8</td>       <td>0.6</td>     </tr>     <tr>       <th>Germany</th>       <td>1.1</td>       <td>1.3</td>       <td>1.1</td>       <td>1.2</td>       <td>0.7</td>       <td>1.2</td>       <td>0.7</td>     </tr>   </tbody> </table>
 
-$$\quad$$ At the end, the output of this work consisted in all the corresponding adaptation weights on the beer exports based on the ratings distribution. This output was sent further to Porthos in a table $$weightings$$. The table is ordered as follows: $$weightings_{c,s}[i]$$ is the weight that reflects the affinity that a beer consumming country $$c$$ has with a beer style $$s$$ during the year $$i$$.
+$$\quad$$ At the end, the output of this work consisted in all the corresponding adaptation weights on the beer exports based on the ratings distribution. This output is organized in a table $$weightings$$. The table is ordered as follows: $$weightings_{c,s}[i]$$ is the weight that reflects the affinity that a beer consumming country $$c$$ has with a beer style $$s$$ during the year $$i$$.
 
 ## *4) Study of the popularity of beer*
 
@@ -161,7 +161,7 @@ $$\quad$$ To evaluate this, he plotted the *beer's popularity* for all countries
 
 {% include porthos.html %}
 
-$$\quad$$ He then created a table $$popularity.variations$$, in which the coefficient $$popularity.variations_{c,s}[i]$$ represents the variation rate of the proportion of the number of ratings of a beer style $$s$$ in a beer consummer country $$c$$ during the year $$i$$. To obtain a multiplicative factor from this rate, one should add the scalar $$1$$ to it.
+$$\quad$$ He then created a table $$popularity.variations$$, in which the coefficient $$popularity.variations_{c,s}[i]$$ represents the variation rate of the proportion of the number of ratings of a beer style $$s$$ in a beer consuming country $$c$$ during the year $$i$$. In other words, $$popularity.variations_{c,s}[i]$$ corresponds to the difference between the *beer's popularity* for the beer consuming country $$c$$ and beer style $$s$$ of the year $$i+1$$ and the one of the year $$i$$. To obtain a multiplicative factor from this rate, one should add the scalar $$1$$ to it. 
 
 $$\quad$$ At that time, all tools were ready to build the algorithm.
 
