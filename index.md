@@ -175,9 +175,13 @@ $$\quad$$ As a final step, *Les4mousquetaires* gathered their work to calculate 
 **copy-paste pour la partie Gomez**
 
 $$exportation_{c}[i]$$ : adjusted number of beers that is effectively exported for the year i
+
 $$expected.number[i]$$ : expected number of beers to be exported, estimated at the beginning of the year i before the musketeers adjustments
+
 $$expected.export_{c_0,c}[i]$$ : number of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located
+
 $$popularity.variations_{c}[i]$$ : variation rate of the beer style popularity between years i+1 and i in the beer consuming country $$c$$
+
 $$weightings_{c,s}[i]$$ : coefficient for year i to weight the exports estimating the affinity of a beer consuming country towards a beer style $$s$$
 
 At that time, the total exports of the little and gentle brewer corresponds to the sum of all exports over all beer consuming countries:
