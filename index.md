@@ -222,4 +222,4 @@ According to the wishes of the little and gentle brewer, *Les4Mousquetaires* sug
 
     🥇 United States : Ale 
     🥈 United States : IIPA
-    🥉 United States : Strong Al
+    🥉 United States : Strong Ale
