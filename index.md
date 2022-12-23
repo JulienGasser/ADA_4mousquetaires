@@ -220,6 +220,6 @@ The second was the top 10 pairs in terms of number of beers produced.
 
 According to the wishes of the little and gentle brewer, *Les4Mousquetaires* suggested the following combinations:
 
-    🥇 United States :  Ale 
+    🥇 United States : Ale 
     🥈 United States : IIPA
     🥉 United States : Strong Al
