@@ -203,7 +203,7 @@ At the beginning of the simulation, for the year 2004, the expected production $
 
 ## 6) 🎊🎉 Final advice 🎊🎉
 
-Although D'Artagnan's advice was explicit and easy to interpret, Athos' and Porthos' advices were more complex and therefore less obvious to the little and gentle brewer. It is for this reason that the *Les4Mousquetaires* chose to explore all the different possibilities of brewery locations and beer syles.
+Although D'Artagnan's advice was explicit and easy to interpret, Athos' and Porthos' advices were more complex and therefore less obvious to the little and gentle brewer. It is for this reason that *Les4Mousquetaires* chose to explore all the different possibilities of brewery locations and beer syles.
 
 As the little and gentle brewer based his choice firstly on the number of countries reached by his beer and secondly on the number of beers produced, *Les4Mousquetaires* chose to represent their results in two distinct tables.
 
