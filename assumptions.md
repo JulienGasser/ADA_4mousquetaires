@@ -8,7 +8,7 @@ subtitle: This markedown describes the material and main assumptions of this sto
 $$\quad$$ Two datasets *RateBeer* and *BeerAdvocate* respectively from the websites [**RateBeer**](https://www.ratebeer.com/) and [**BeerAdvocate**](https://www.beeradvocate.com/) are used to provide this data story. Both datasets contain user ratings about beers. Each rating contains many features such as the posting date, a possible review, the beer name, the brewery, ratings on appearance, aroma... Datasets on beers and breweries have been merged to the ratings to get further information about the beers and breweries such as the brewery and user location, the beer style.
 
 ### Assumption 1
-$$\quad$$ Regarding the expension of the websites, the first years regarding the union of both datasets are not very well supplied with data. It has been decided to keep the data only from 2004 and therefore to begin the story in 2004.
+$$\quad$$ Regarding the expension of the websites, the first years regarding the union of both datasets are not very well supplied with data. It has been decided to keep the data only from 2004. For the story, it is chosen that the little and gentle brewer wanted to create its brewery in 2004 and then the prediction data given by the *great druid* to *Les4Mousquetaires* were from 2004 to 2017.
 
 {% include rating_year.html %}
 
