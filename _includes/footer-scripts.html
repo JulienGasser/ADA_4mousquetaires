@@ -38,20 +38,17 @@
 {% endif %}
 <script>{% include beermap.json %}</script>
 <script>{% include exportfig.json %}</script>
-<script>{% include countryfig.json %}</script>
+
 <script>
 beermap_data = JSON.parse(beermap_data);
 exportfig_data = JSON.parse(exportfig_data);
-countryfig_data = JSON.parse(countryfig_data);
+//countryfig_data = JSON.parse(countryfig_data);
 
 Plotly.newPlot('plotly-beermap', beermap_data['USA']['Ale']['data'], beermap_data['USA']['Ale']['layout']);
 Plotly.addFrames('plotly-beermap', beermap_data['USA']['Ale']['frames']);
 
 Plotly.newPlot('plotly-exportfig', exportfig_data['USA']['Ale']['data'], exportfig_data['USA']['Ale']['layout']);
 Plotly.addFrames('plotly-exportfig', exportfig_data['USA']['Ale']['frames']);
-
-Plotly.newPlot('plotly-countryfig', countryfig_data['USA']['Ale']['data'], countryfig_data['USA']['Ale']['layout']);
-Plotly.addFrames('plotly-countryfig', countryfig_data['USA']['Ale']['frames']);
 
 // Function to update the chart when the dropdown menu selection changes
 function updatePlot() {
@@ -67,8 +64,6 @@ Plotly.react('plotly-beermap', beermap_data[country][style]['data'], beermap_dat
 Plotly.addFrames('plotly-beermap', beermap_data[country][style]['frames']);
 
 Plotly.react('plotly-exportfig', exportfig_data[country][style]['data'], exportfig_data[country][style]['layout']);
-
-Plotly.react('plotly-countryfig', countryfig_data[country][style]['data'], countryfig_data[country][style]['layout']);
 }
 </script>
 

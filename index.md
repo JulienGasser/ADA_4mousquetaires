@@ -27,7 +27,7 @@ A little trouble to find it or by curiosity to better understand the simulation,
 
 <br>
 <br>
-<div id="plotly-countryfig"></div>
+<div id="plotly-exportfig"></div>
 
 ## Story of the little and gentle brewer and Les4Mousquetaires
 
