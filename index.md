@@ -9,7 +9,7 @@ tags: [brewery, beer, flavour, taste, export, plotly]
 
 ## Once upon a time...
  
-$$\quad$$ There was a little and gentle brewer who dreamed of spreading happiness in the world. As everyone knows, beer makes people happy, so he decided to reach his dream by creating a beer and to spread it around the world. The problem is that he sucked at market study and didn't know how to begin with his business... If he first aimed to reach as many countries as possible and secondly the most people as possible with his beer, he had to make the good choices ! Which type of beers to choose ? Where to open his brewery ? ... That's a complicated problem, isn't it ? Fortunately, Les4Mousquetaires were here to help this litte and gentle brewer by creating a tool that would help him a lot. This tool is a market simulator that will predict the spread of his beer according to the choice of his beer and brewery. Will this gentle and little brewer reach is dream ?
+$$\quad$$ There was a little and gentle brewer who dreamed of spreading happiness in the world. As everyone knows, beer makes people happy, so he decided to reach his dream by creating a beer and to spread it around the world. The problem is that he sucked at market study and didn't know how to begin with his business... If he first aimed to reach as many countries as possible and secondly the most people as possible with his beer, he had to make the good choices ! Which type of beers to choose ? Where to open his brewery ? ... That's a complicated problem, isn't it ? Fortunately, *Les4Mousquetaires* were here to help this litte and gentle brewer by creating a tool that would help him a lot. This tool is a brewery success simulation that will predict the spread of his beer according to the choice of his beer and brewery. Will this gentle and little brewer reach is dream ?
 
 ## Brewery success simulation tool
 
@@ -17,10 +17,6 @@ $$\quad$$ Here is the brewery success simulation tool created by *Les4Mousquetai
 
 $$\quad$$ This simulation was created to guide the little and gentle brewer when establishing its brewery in 2004. This tool takes as inputs a country where to set up a brewery and a style of beer to brew. Then, it outputs a world map with the prediction of the distribution of the beers produced by the brewery across countries and years, until 2017, for an initial expected production of 10'000 beers. In addition, given the little and gentle brewer's goals of first reaching as many countries as possible and then as many people as possible, a second graph shows the cumulative number of countries reached by its beer and the cumulative number of beers distributed across years. The happiness gauge on the right of the world map shows how happy are the country on the map. This happiness score is based on taking the $$log_{10}$$ of the distributed beers in each country.
 
-{: .box-note}
-**Note:** Advice of *Les4Mousquetaires* : Open a brewery that produce Ale style beers in the United States
-
-According to *Les4Mousquetaires* advices, the little and gentle brewer decided to open his brewery in the United States
 The little and gentle brewer decided (TODO). Do you feel the soul of the brewer in you to find a better prediction than the little and gentle brewer ?
 
 A little trouble to find it or by curiosity to better understand the simulation, the following story of the little and gentle brewer and *Les4Mousquetaires* is waiting for you …
