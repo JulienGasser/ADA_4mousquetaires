@@ -163,6 +163,9 @@ $$\quad$$ To evaluate this data, he plotted the *beer's popularity* for all coun
 
 $$\quad$$ He then created a table $$popularity.variations$$, in which the coefficient $$popularity.variations_{c,s}[i]$$ represents the variation rate of the proportion of the number of ratings of a beer style $$s$$ in a beer consuming country $$c$$ during the year $$i$$. In other words, $$popularity.variations_{c,s}[i]$$ corresponds to the difference between the *beer's popularity* for the beer consuming country $$c$$ and beer style $$s$$ of the year $$i+1$$ and the one of the year $$i$$. To obtain a multiplicative factor from this rate, one should add the scalar $$1$$ to it. 
 
+{: .box-note}
+**Note:** It should be noticed here that as the data of 2018 are not available, then *popularity.variations* cannot be computed for 2017, thus the brewery success simulation run from 2004 to 2016.
+
 $$\quad$$ At that time, all tools were ready to build the algorithm.
 
 
