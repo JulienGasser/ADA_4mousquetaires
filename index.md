@@ -1,6 +1,6 @@
 ---
 layout: page
-title: The guy that became a brewer
+title: The brewer, the druid and the musketeers
 subtitle: An original ADA story about beer !
 gh-repo: juliengasser/ADA4mousquetaires
 tags: [brewery, beer, flavour, taste, export, plotly]
