@@ -13,6 +13,9 @@ $$\quad$$ There was a little and gentle brewer who dreamed of spreading happines
 
 ## Brewery success simulation tool
 
+{: .box-note}
+**Note:** The temporality of the story is given in the assupmtion 1
+
 $$\quad$$ Here is the brewery success simulation tool created by *Les4Mousquetaires* for the little and gentle brewer. As the latter is generous, he leaves this precious tool in open source to the internet. 
 
 $$\quad$$ This simulation was created to guide the little and gentle brewer when establishing its brewery in 2004. This tool takes as inputs a country where to set up a brewery and a style of beer to brew. Then, it outputs a world map with the prediction of the distribution of the beers produced by the brewery across countries and years, until 2016, for an initial expected production of 1'000 beers. In addition, given the little and gentle brewer's goals of first reaching as many countries as possible and then as many people as possible, a second graph shows the cumulative number of countries reached by its beer and the cumulative number of beers distributed across years. The happiness gauge on the right of the world map shows how happy are the countries on the map. This happiness score is based on taking the $$log_{10}$$ of the distributed beers in each country.
@@ -40,9 +43,6 @@ A little trouble to find it or by curiosity to better understand the simulation,
 ### *1) Birth of the algorithm*
 
 $$\quad$$Created by *Les4Mousquetaires*, the above simulation is a practical tool to help the little and gentle brewer to spread happiness 🍻 around the world. The conception of this tool was a long and perilous adventure ! Here is the story...
-
-{: .box-note}
-**Note:** The temporality of the story is given in the assupmtion 1
 
 
 <img align="right" width="180" height="220" src="https://user-images.githubusercontent.com/77831063/209109848-ab9ce2c6-ba5e-4256-877d-c3f20a159ed0.png">
