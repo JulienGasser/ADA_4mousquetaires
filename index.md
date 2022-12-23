@@ -48,7 +48,7 @@ $$\quad$$On their side, D'Artagnan, Athos and Porthos sat down around a table an
 
 $$\quad$$The algorithm works as follow. First, the little and gentle brewer has to choose, as input, the type of beers that he wants to produce and the country where he wants to open his brewery. Then, the next three steps are iterated across the years :
 
-* **Step 1**:$$\quad$$At the start of the year, the number of beers expected to be distributed during this year is divided in shares of beers that are allocated to different beer consumming countries. This is the **exportation rate** step.
+* **Step 1**:$$\quad$$At the start of the year, the number of beers expected to be distributed during this year is divided in shares of beers that are allocated to different beer consuming countries. This is the **exportation rate** step.
 
 
 * **Step 2**:$$\quad$$ Estimate how beer exports will vary during the year, based on the **popularity of beer** and the **affinity that the country has for a style of beer**. This resulting number of beers that will be effectively consummed this current year.
@@ -71,34 +71,34 @@ To easy the elaboration of this algorithm, the work was separated into three tas
 
 At the beginning of the year $$i$$, a certain number of beers is expected to be exported during the year: $$expected.number[i]$$. The objective of D'Artagnan was first to determine the expected **beer export rate**. 
 
-He took the data from the *great druid* cleaned by Aramis. As the dataset contained **beer ratings with the user countries, the brewery countries and the posting dates**, he calculated **for each year, for each beer producing country the proportion of beers expected to be distributed in each beer consumming country**. He collected all these data in a table named $$proportion.export$$ to build later the simulation algorithm.
+He took the data from the *great druid* cleaned by Aramis. As the dataset contained **beer ratings with the user countries, the brewery countries and the posting dates**, he calculated **for each year, for each beer producing country the proportion of beers expected to be distributed in each beer consuming country**. He collected all these data in a table named $$proportion.export$$ to build later the simulation algorithm.
 
-The table $$expected.export$$ is ordered as follows: $$expected.export_{c_0,c}[i]$$ is the proportion of beers expected to be distributed from the beer producing country $$c_0$$ that is exported to the beer consumming country $$c$$ during the year $$i$$.
+The table $$expected.export$$ is ordered as follows: $$proportion.export_{c_0,c}[i]$$ is the proportion of beers expected to be distributed from the beer producing country $$c_0$$ that is exported to the beer consuming country $$c$$ during the year $$i$$.
 
-The following **hypothesis** concerning the $$expected.export$$ table were made : 
+The following **hypothesis** concerning the $$proportion.export$$ table were made : 
 * each ratings is considered as a beer consummed. A beer rating for a certain user country is considered as a beer drunk in this beer consuming country. A beer rating for a certain brewery country is taken as a beer produced in this beer producing country. The posting date year is assumed to be the year when the beer was consumed.
-* thus, the proportion of beers exported from a certain beer producing country to a beer consumming country during a year is calculated as the proportion of ratings for beers with a brewery in the considered beer producing country and rated by users in a consumming country during a year. 
+* thus, the proportion of beers exported from a certain beer producing country to a beer consuming country during a year is calculated as the proportion of ratings for beers with a brewery in the considered beer producing country and rated by users in a consuming country during a year. 
 * the calculated proportion of beers exported from a country to another during a year represents the proportion that would be exported from a brewery implanted in this country by the little and gentle brewer to another country.
 * this calculation assumes that the proportion of beer exportation is independant of the beer style. Nevertheless, in the meantime, Athos and Porthos were developing an analysis to take this effect into account.
 
-At this step, D'Artagnan had a big table including 14 years (i.e. 2004 to 2017), 203 beer production countries and 186 beer consuming countries. His next task was to **filter these data to help the little and gentle brewer** to decide in which country to establish its brewery. Remembering the first will of the little and gentle brewer to spread its beer and thus happiness in as many countries as possible, he generated the graph (fig.'Number of beer consumming countries per beer producing country'). He **plotted the number of beer consumming countries to which a beer producing country exports** during the whole time story. From this heavy-tailed distribution, he could **advice the little and gentle brewer to choose one beer producing country** that reach a high number of beer consumming countries to settle down.
+At this step, D'Artagnan had a big table including 14 years (i.e. 2004 to 2017), 203 beer production countries and 186 beer consuming countries. His next task was to **filter these data to help the little and gentle brewer** to decide in which country to establish its brewery. Remembering the first will of the little and gentle brewer to spread its beer and thus happiness in as many countries as possible, he generated the graph (fig.'Number of beer consuming countries per beer producing country'). He **plotted the number of beer consuming countries to which a beer producing country exports** during the whole time story. From this heavy-tailed distribution, he could **advice the little and gentle brewer to choose one beer producing country** that reach a high number of beer consuming countries to settle down.
 
 {% include consumingPerProducing.html %}
 
-Finally, D'Artagnan **plotted the detailled yearly repartition of beers expected to be distributed from some beer producing countries**. For display purpose, he opted to show the following subset from the $$expected.export$$ table. He selected the top ten of advised beer producing countries (on the plot (fig.'Number of beer consumming countries per beer producing country'), this corresponds to countries with a number of consumming country above the red line) and five other random countries. Then, he kept the beer consumming countries that contributed at least a proportion of 0.008 of the beers exported from the selected beer producing countries. The objective of this plot is to represent the annual evolution of the exports of the top-ten beer producing countries that D'Artagan advised to the little and gentle brewer and to compare them to less-optimal ones. He also wanted to illustrate the table $$expected.export$$ with this subset of data through this figure (fig.'Proportion of beer exported from the selected beer producing countries').
+Finally, D'Artagnan **plotted the detailled yearly repartition of beers expected to be distributed from some beer producing countries**. For display purpose, he opted to show the following subset from the $$proportion.export$$ table. He selected the top ten of advised beer producing countries (on the plot (fig.'Number of beer consuming countries per beer producing country'), this corresponds to countries with a number of consuming country above the red line) and five other random countries. Then, he kept the beer consuming countries that contributed at least a proportion of 0.008 of the beers exported from the selected beer producing countries. The objective of this plot is to represent the annual evolution of the exports of the top-ten beer producing countries that D'Artagan advised to the little and gentle brewer and to compare them to less-optimal ones. He also wanted to illustrate the table $$proportion.export$$ with this subset of data through this figure (fig.'Proportion of beer exported from the selected beer producing countries').
 
 {% include export_beer.html %}
 
 **Parchment of use of the graph (fig.'Proportion of beer exported from the selected beer producing countries')**
 * each line represents one of the selected beer producing countries $$c_0$$. From bottom to top, the beer producing countries are displayed from more advised to less advised countries to install a brewery according the ranking on the figure (fig.'Proportion of beer exported from the selected beer producing countries').
-* each column represents one of the selected beer consumming countries $$c$$.
-* the value of a cell is $$expected.export_{c_0,c}[i]$$, the proportion of beers expected to be distributed from a beer producing country $$c_0$$ to a beer consumming country $$c$$ during the considered year $$i$$. 
-* a producing country with a higher number of non-zero values on a line (i.e. not white cell) exports beers to a higher number of consumming countries.
+* each column represents one of the selected beer consuming countries $$c$$.
+* the value of a cell is $$proportion.export_{c_0,c}[i]$$, the proportion of beers expected to be distributed from a beer producing country $$c_0$$ to a beer consuming country $$c$$ during the considered year $$i$$. 
+* a producing country with a higher number of non-zero values on a line (i.e. not white cell) exports beers to a higher number of consuming countries.
 
 
 ## *3) Study of the beers ratings distributions*
 
-$$\quad$$ Since the step of creating the beer export table $$expected.export$$ did not take into account the style of the beer, the task of Athos and Porthos was to adjust the expected production $$expected.number[i]$$ defined at the beginning of the year by taking into account the impact of a certain type of beer. In this chapter, Athos' tasks is developped.
+$$\quad$$ Since the step of creating the beer export table $$proportion.export$$ did not take into account the style of the beer, the task of Athos and Porthos was to adjust the expected production $$expected.number[i]$$ defined at the beginning of the year by taking into account the impact of a certain type of beer. In this chapter, Athos' tasks is developped.
 
 $$\quad$$ The old musketeer, thanks to his long experience and his hard-earned data science skills, had succeeded to identify the little and gentle brewer. He had managed to estimate the brewer behavior by imagining the reaction he might have had when analyzing the ratings his beer would have received. He made the following assumptions:
 
@@ -170,19 +170,17 @@ $$\quad$$ At that time, all tools were ready to build the algorithm.
 
 $$\quad$$ As a final step, *Les4mousquetaires* gathered their work to calculate how many beers the little and gentle brewer will have produced the year $$i$$ considering his **brewery location** and **beer style** choices. They first picked the expected proportions computed by D'Artagnan from the table $$proportion.export$$ and multiplied it with the expected number of beer to be exported before the adjustments. Then, they multiplied the expected exports by the weights that are given by Athos in $$weightings$$ that expressed the affinity that a country had towards a *beer style* during a specific year. Finally, he multiplied this result by the muliplicative factor $$(1 + popularity.variations_{c}[i])$$ in order to take into account the variation in *beer's popularity* of a *beer style* during the considered year. The above paragraph can be summarized with the following formula:
 
-\\[exportation_{c}[i] = expected.number[i] \times expected.export_{c_0,c}[i] \times weightings_{c,s}[i] \times (1 + popularity.variations_{c}[i])\\]
+\\[exportation_{c}[i] = expected.number[i] \times proportion.export_{c_0,c}[i] \times weightings_{c,s}[i] \times (1 + popularity.variations_{c}[i])\\]
 
-
-
-**copy-paste pour la partie Gomez**
+In the above equation, the variables are explained below:
 
 $$exportation_{c}[i]$$ : adjusted number of beers that is effectively exported for the year i
 
 $$expected.number[i]$$ : expected number of beers to be exported, estimated at the beginning of the year i before the musketeers adjustments
 
-$$expected.export_{c_0,c}[i]$$ : number of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located
+$$proportion.export_{c_0,c}[i]$$ : number of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located
 
-$$popularity.variations_{c}[i]$$ : variation rate of the beer style popularity between years i+1 and i in the beer consuming country $$c$$
+$$popularity.variations_{c}[i]$$ :variation rate of the proportion of the number of ratings of a beer style $$s$$ in a beer consuming country $$c$$ during the year $$i$$
 
 $$weightings_{c,s}[i]$$ : coefficient for year i to weight the exports estimating the affinity of a beer consuming country towards a beer style $$s$$
 
