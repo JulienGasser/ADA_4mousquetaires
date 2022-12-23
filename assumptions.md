@@ -31,6 +31,6 @@ During the analysis of the different beer styles, the dataset that was cleaned u
 
 
 
-It remains to be noted that the clustering was done on the basis of the style categories that are defined on the websites {} and {} 
+It remains to be noted that the clustering was done on the basis of the style categories that are defined on the websites [**RateBeer**](https://www.ratebeer.com/) and [**BeerAdvocate**](https://www.beeradvocate.com/)
 
 
