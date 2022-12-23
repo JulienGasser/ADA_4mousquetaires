@@ -20,6 +20,10 @@ $$\quad$$ This simulation was created to guide the little and gentle brewer when
 {: .box-note}
 **Note:** Advice of *Les4Mousquetaires* for the little and gentle brewer : Open a brewery that produces Ale style beers in the United States. You, user of this website, feel free to brew your preferred beer style for different countries to try to make people happier than the little and gentle brewer.
 
+<p align="center">
+<img align="center" width="350" src="https://user-images.githubusercontent.com/77831063/209349672-40304fa3-03a8-483f-8c60-3e424b4d8c83.jpg">
+</p>
+
 A little trouble to find it or by curiosity to better understand the simulation, the following story of the little and gentle brewer and *Les4Mousquetaires* is waiting for you…
 
 
