@@ -17,6 +17,10 @@ $$\quad$$ Here is the brewery success simulation tool created by *Les4Mousquetai
 
 $$\quad$$ This simulation was created to guide the little and gentle brewer when establishing its brewery in 2004. This tool takes as inputs a country where to set up a brewery and a style of beer to brew. Then, it outputs a world map with the prediction of the distribution of the beers produced by the brewery across countries and years, until 2017, for an initial expected production of 10'000 beers. In addition, given the little and gentle brewer's goals of first reaching as many countries as possible and then as many people as possible, a second graph shows the cumulative number of countries reached by its beer and the cumulative number of beers distributed across years. The happiness gauge on the right of the world map shows how happy are the country on the map. This happiness score is based on taking the $$log_{10}$$ of the distributed beers in each country.
 
+{: .box-note}
+**Note:** Advice of *Les4Mousquetaires* : Open a brewery that produce Ale style beers in the United States
+
+According to *Les4Mousquetaires* advices, the little and gentle brewer decided to open his brewery in the United States
 The little and gentle brewer decided (TODO). Do you feel the soul of the brewer in you to find a better prediction than the little and gentle brewer ?
 
 A little trouble to find it or by curiosity to better understand the simulation, the following story of the little and gentle brewer and *Les4Mousquetaires* is waiting for you …
