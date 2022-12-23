@@ -170,7 +170,8 @@ $$\quad$$ At that time, all tools were ready to build the algorithm.
 
 $$\quad$$ As a final step, *Les4mousquetaires* gathered their work to calculate how many beers the little and gentle brewer will have produced the year $$i$$ considering his **brewery location** and **beer style** choices. They first picked the expected proportions computed by D'Artagnan from the table $$proportion.export$$ and multiplied it with the expected number of beer to be exported before the adjustments in $$$expected.number$$. Then, they multiplied the expected exports by the weights that are given by Athos in $$weightings$$ that expressed the affinity that a country had towards a *beer style* during a specific year. Finally, he multiplied this result by the muliplicative factor $$(1 + popularity.variations_{c}[i])$$ in order to take into account the variation in *beer's popularity* of a *beer style* during the considered year. The above paragraph can be summarized with the following formula:
 
-\\[exportation_{c}[i] = expected.number[i] \times proportion.export_{c_0,c}[i] \times weightings_{c,s}[i] \times (1 + popularity.variations_{c}[i])\\]
+\\[exportation_{c}[i] =\\
+expected.number[i] \times proportion.export_{c_0,c}[i] \times weightings_{c,s}[i] \times (1 + popularity.variations_{c}[i])\\]
 
 In the above equation, the variables are explained below:
 
