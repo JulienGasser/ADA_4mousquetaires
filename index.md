@@ -49,7 +49,7 @@ $$\quad$$ The first ordeal to overcome was to find datas. After many reflections
 $$\quad$$On their side, D'Artagnan, Athos and Porthos sat down around a table and started to elaborate the tool to help the little and gentle brewer. Based on the two datasets being cleaned by Aramis, they decided to create an interative algorithm divided into 3 steps. This algorithm is explained below and illustrated on a parchment: 
 
 <p align="center">
-<img align="center" width="480" height="480" src="https://user-images.githubusercontent.com/77831063/208921468-755e4e4a-eddd-4035-a6fb-8e9f15db28c8.png">
+<img align="center" height="400" src="https://user-images.githubusercontent.com/77831063/208921468-755e4e4a-eddd-4035-a6fb-8e9f15db28c8.png">
 </p>
 
 $$\quad$$The algorithm works as follow. First, the little and gentle brewer has to choose, as input, the type of beers that he wants to produce and the country where he wants to open his brewery. Then, the next three steps are iterated across the years :
@@ -176,11 +176,11 @@ $$expected.number[i] \times proportion.export_{c_0,c}[i] \times weightings_{c,s}
 
 In the above equation, the variables are explained below:
 
-* $$exportation_{c_0,c}[i]$$ : adjusted number of beers that is effectively exported for the year i from the beer producing country $c_0$ to the beer consuming country $c$
+* $$exportation_{c_0,c}[i]$$ : adjusted number of beers that is effectively exported for the year i from the beer producing country $$c_0$$ to the beer consuming country $$c$$
 
 * $$expected.number[i]$$ : expected number of beers to be exported, estimated at the beginning of the year i before the musketeers adjustments
 
-* $$proportion.export_{c_0,c}[i]$$ : proportion of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located
+* $$proportion.export_{c_0,c}[i]$$ : proportion of beers expected to be distributed for the year i in the beer consummer country $$c$$ from the country $$c_0$$ where the brewery is located
 
 * $$popularity.variations_{c,s}[i]$$ : difference between the *beer’s popularity* for the beer consuming country *c* and beer style *s* of the year *i+1* and the one of the year *i*
 
@@ -201,7 +201,7 @@ $$
 
 At the beginning of the simulation, for the year 2004, the expected production $$expected.number[2004]$$ is set to 1'000 beers.
 
-## 6) Final advice
+## 6) 🎊🎉 Final advice 🎊🎉
 
 Although D'Artagnan's advice was explicit and easy to interpret, Athos' and Porthos' advices were more complex and therefore less obvious to the little and gentle brewer. It is for this reason that the *Les4Mousquetaires* chose to explore all the different possibilities of brewery locations and beer syles.
 
