@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Once upon a time there was a little and gentle brewer...
+title: The guy that became a brewer
 subtitle: An original ADA story about beer !
 gh-repo: juliengasser/ADA4mousquetaires
 tags: [brewery, beer, flavour, taste, export, plotly]
@@ -21,7 +21,7 @@ $$\quad$$ Here is the brewery success simulation tool created by *Les4Mousquetai
 $$\quad$$ This simulation was created to guide the little and gentle brewer when establishing its brewery in 2004. This tool takes as inputs a country where to set up a brewery and a style of beer to brew. Then, it outputs a world map with the prediction of the distribution of the beers produced by the brewery across countries and years, until 2016, for an initial expected production of 1'000 beers. In addition, given the little and gentle brewer's goals of first reaching as many countries as possible and then as many people as possible, a second graph shows the cumulative number of countries reached by its beer and the cumulative number of beers distributed across years. The happiness gauge on the right of the world map shows how happy are the countries on the map. This happiness score is based on taking the $$log_{10}$$ of the distributed beers in each country.
 
 {: .box-note}
-**Note:** Advice of *Les4Mousquetaires* for the little and gentle brewer : Open a brewery that produces Ale style beers in the United States. You, user of this website, feel free to brew your preferred beer style for different countries to try to make people happier than the little and gentle brewer.
+**Note:** Advice of *Les4Mousquetaires* for the little and gentle brewer : Open a brewery that produces Ale style beers in the United States. You, user of this website, feel free to brew your preferred beer style in different countries to try to make people happier than the little and gentle brewer.
 
 <p align="center">
 <img align="center" width="350" src="https://user-images.githubusercontent.com/77831063/209349672-40304fa3-03a8-483f-8c60-3e424b4d8c83.jpg">
