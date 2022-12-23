@@ -33,12 +33,12 @@ A little trouble to find it or by curiosity to better understand the simulation,
 
 ### *1) Birth of the algorithm*
 
-$$\quad$$Created by Les4Mousquetaires, the above simulation is a practical tool to help the little and gentle brewer to spread happiness 🍻 around the world. The conception of this tool was a long and perilous adventure ! Here is the story...
+$$\quad$$Created by *Les4Mousquetaires*, the above simulation is a practical tool to help the little and gentle brewer to spread happiness 🍻 around the world. The conception of this tool was a long and perilous adventure ! Here is the story...
 
 
 <img align="right" width="180" height="220" src="https://user-images.githubusercontent.com/77831063/209109848-ab9ce2c6-ba5e-4256-877d-c3f20a159ed0.png">
 
-$$\quad$$ The first ordeal to overcome was to find datas. After many reflections, *Les4Mousquetaires* decided to ask the *great druid* for help because he was known to be a real beer lover. The *great druid* was also known for hanging out in bars all day long. So Les4Mousquetaires went to the most famous bar in town and, as expected, they found the *great druid* in a sorry state. After explaining their project, the *great druid* took out an old crystal ball from his bag and consulted the oracles to find out how the beer market would evolve in the next few years. After consultation, the *great druid* took a USB stick, plugged it into his crystal ball and saved two datasets [**RateBeer**](https://www.ratebeer.com/) and [**BeerAdvocate**](https://www.beeradvocate.com/). These datasets were beer rating predictions for the next years. Each rating contains many features such as the posting date, a possible review, the beer name, the brewery location, the user location, ratings on appearance, aroma...  While giving the USB stick to *Les4Mousquetaires*, as the *great druid* was a little bit wasted, he dropped it in his beer... They jumped on the beer and saved the USB stick from drowning. However, both datasets were partially corrupted. Panic-stricken by the poor state of the two datasets, Aramis decided to isolate himself to start a big cleaning process of the two datasets.
+$$\quad$$ The first ordeal to overcome was to find datas. After many reflections, *Les4Mousquetaires* decided to ask the *great druid* for help because he was known to be a real beer lover. The *great druid* was also known for hanging out in bars all day long. So *Les4Mousquetaires* went to the most famous bar in town and, as expected, they found the *great druid* in a sorry state. After explaining their project, the *great druid* took out an old crystal ball from his bag and consulted the oracles to find out how the beer market would evolve in the next few years. After consultation, the *great druid* took a USB stick, plugged it into his crystal ball and saved two datasets [**RateBeer**](https://www.ratebeer.com/) and [**BeerAdvocate**](https://www.beeradvocate.com/). These datasets were beer rating predictions for the next years. Each rating contains many features such as the posting date, a possible review, the beer name, the brewery location, the user location, ratings on appearance, aroma...  While giving the USB stick to *Les4Mousquetaires*, as the *great druid* was a little bit wasted, he dropped it in his beer... They jumped on the beer and saved the USB stick from drowning. However, both datasets were partially corrupted. Panic-stricken by the poor state of the two datasets, Aramis decided to isolate himself to start a big cleaning process of the two datasets.
 
 $$\quad$$On their side, D'Artagnan, Athos and Porthos sat down around a table and started to elaborate the tool to help the little and gentle brewer. Based on the two datasets being cleaned by Aramis, they decided to create an interative algorithm divided into 3 steps. This algorithm is explained below and illustrated on a parchment: 
 
@@ -51,27 +51,27 @@ $$\quad$$The algorithm works as follow. First, the little and gentle brewer has 
 * **Step 1**:$$\quad$$At the start of the year, the number of beers expected to be distributed during this year is divided in shares of beers that are allocated to different beer consuming countries. This is the exportation rate step determined with the **beer exportation profile**.
 
 
-* **Step 2**:$$\quad$$ Estimate how beer exports will vary during the year, based on the **popularity of beer** and the **affinity that the country has for a style of beer**. This resulting number of beers that will be effectively consummed this current year.
+* **Step 2**:$$\quad$$ Estimate how beer exports will vary during the year, based on the **popularity of beer** and the **affinity that the country has for a style of beer**. This results in the number of beers that will be effectively consummed this current year.
 
-* **Step 3**:$$\quad$$ The number of beers expected to be distributed during the next year (step 1, next iteration) is taken as the effectively consummed number of beers this current year.
+* **Step 3**:$$\quad$$ The number of beers expected to be distributed during the next year (step 1, next iteration) is taken as the effectively consummed number of beers this current year. The number of beers expected to be distributed during the first year is initialized with 1'000 beers.
 
-$$\quad$$ The output of this algorithm is the brewery success simulation tool. **Il faut dire encore des trucs sur les courbes obtenues, mais ça va dépendre de ce qu'on a mis dans le paragraphe introductif.**
+$$\quad$$ The output of this algorithm is the brewery success simulation tool. 
 
 To easy the elaboration of this algorithm, the work was separated into three tasks:
 
 | Who $$\quad\quad\quad $$ | Task |
 | :--       | :--   |
-| D'Artagnan       | Study of the beers exportation profile       |
-| Athos   | Study of the beers ratings distributions        |
+| D'Artagnan       | Study of the beer export profile       |
+| Athos   | Study of the beer ratings distributions        |
 | Porthos   | Study of the popularity of beer        |
 | Aramis | Already fighting against cleaning datasets        |
 
 
 ## *2) Beer export profile*
 
-$$\quad$$ At the beginning of the year $$i$$, a certain number of beers is expected to be exported during the year: $$expected.number[i]$$. The objective of D'Artagnan was first to determine the expected **beer export profile**. 
+$$\quad$$ At the beginning of the year $$i$$, a certain number of beers was expected to be distributed during the year: $$expected.number[i]$$. 
 
-$$\quad$$ He took the data from the *great druid* cleaned by Aramis. As the dataset contained **beer ratings with the user countries, the brewery countries and the posting dates**, he calculated **for each year, for each beer producing country the proportion of beers expected to be distributed in each beer consuming country**. He collected all these data in a table named $$proportion.export$$ to build later the simulation algorithm.
+$$\quad$$  The objective of D'Artagnan was first to determine the expected beer export profile. He took the data from the *great druid* cleaned by Aramis. As the dataset contained beer ratings with the user countries, the brewery countries and the posting dates, he calculated for each year, for each beer producing country the proportion of beers expected to be distributed in each beer consuming country. He collected all these data in a table named $$proportion.export$$ to build later the simulation algorithm.
 
 $$\quad$$ The table $$expected.export$$ is ordered as follows: $$proportion.export_{c_0,c}[i]$$ is the proportion of beers expected to be distributed from the beer producing country $$c_0$$ that is exported to the beer consuming country $$c$$ during the year $$i$$.
 
@@ -81,11 +81,11 @@ $$\quad$$ The following **hypothesis** concerning the $$proportion.export$$ tabl
 * the calculated proportion of beers exported from a country to another during a year represents the proportion that would be exported from a brewery implanted in this country by the little and gentle brewer to another country.
 * this calculation assumes that the proportion of beer exportation is independant of the beer style. Nevertheless, in the meantime, Athos and Porthos were developing an analysis to take this effect into account.
 
-$$\quad$$ At this step, D'Artagnan had a big table including 14 years (i.e. 2004 to 2017), 203 beer production countries and 186 beer consuming countries. His next task was to **filter these data to help the little and gentle brewer** to decide in which country to establish its brewery. Remembering the first will of the little and gentle brewer to spread its beer and thus happiness in as many countries as possible, he **plotted the number of beer consuming countries to which a beer producing country exports** during the whole time story. From this heavy-tailed distribution, he could **advice the little and gentle brewer to choose one beer producing country** that reach a high number of beer consuming countries to settle down.
+$$\quad$$ At this step, D'Artagnan had a big table including 14 years (i.e. 2004 to 2017), 203 beer production countries and 186 beer consuming countries. His next task was to filter these data to help the little and gentle brewer to decide in which country to establish its brewery. Remembering the first will of the little and gentle brewer to spread its beer and thus happiness in as many countries as possible, he plotted the number of beer consuming countries to which a beer producing country exports during the whole time story. From this heavy-tailed distribution, he could advice the little and gentle brewer to choose one beer producing country that reach a high number of beer consuming countries to settle down.
 
 {% include consumingPerProducing.html %}
 
-$$\quad$$ Finally, D'Artagnan **plotted the detailled yearly repartition of beers expected to be distributed from some beer producing countries**. For display purpose, he opted to show the following subset from the $$proportion.export$$ table. He selected the top ten of advised beer producing countries (on the above plot, this corresponds to countries with a number of consuming country above the red line) and five other random countries (France, Thailand, Switzerland, Peru, Colombia). Then, he kept the beer consuming countries that contributed at least a proportion of 0.008 of the beers exported from the selected beer producing countries. The objective of this plot is to represent the annual evolution of the exports of the top-ten beer producing countries that D'Artagan advised to the little and gentle brewer and to compare them to less-optimal ones. He also wanted to illustrate the table $$proportion.export$$ with this subset of data through this figure.
+$$\quad$$ Finally, D'Artagnan plotted the detailled yearly repartition of beers expected to be distributed from some beer producing countries. For display purpose, he opted to show the following subset from the $$proportion.export$$ table. He selected the top ten of advised beer producing countries (on the above plot, this corresponds to countries with a number of consuming country above the red line) and five other random countries (France, Thailand, Switzerland, Peru, Colombia). Then, he kept the beer consuming countries that contributed at least a proportion of 0.008 of the beers exported from the selected beer producing countries. The objective of this plot is to represent the annual evolution of the exports of the top-ten beer producing countries that D'Artagan advised to the little and gentle brewer and to compare them to less-optimal ones. He also wanted to illustrate the table $$proportion.export$$ with this subset of data through this figure.
 
 {% include export_beer.html %}
 
