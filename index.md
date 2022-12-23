@@ -1,6 +1,6 @@
 ---
 layout: page
-title: What if I set up a brewery?
+title: Once upon a time there was a little and gentle brewer...
 subtitle: An original ADA story about beer !
 gh-repo: juliengasser/ADA4mousquetaires
 tags: [brewery, beer, flavour, taste, export, plotly]
