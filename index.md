@@ -17,9 +17,11 @@ $$\quad$$ Here is the brewery success simulation tool created by *Les4Mousquetai
 
 $$\quad$$ This simulation was created to guide the little and gentle brewer when establishing its brewery in 2004. This tool takes as inputs a country where to set up a brewery and a style of beer to brew. Then, it outputs a world map with the prediction of the distribution of the beers produced by the brewery across countries and years, until 2017, for an initial expected production of 10'000 beers. In addition, given the little and gentle brewer's goals of first reaching as many countries as possible and then as many people as possible, a second graph shows the cumulative number of countries reached by its beer and the cumulative number of beers distributed across years. The happiness gauge on the right of the world map shows how happy are the country on the map. This happiness score is based on taking the $$log_{10}$$ of the distributed beers in each country.
 
-The little and gentle brewer decided (TODO). Do you feel the soul of the brewer in you to find a better prediction than the little and gentle brewer ?
+{: .box-note}
+**Note:** Advice of *Les4Mousquetaires* for the little and gentle brewer : Open a brewery that produces Ale style beers in the United States. You, user of this website, feel free to brew your preferred beer style for different countries to try to make people happier than the little and gentle brewer.
 
-A little trouble to find it or by curiosity to better understand the simulation, the following story of the little and gentle brewer and *Les4Mousquetaires* is waiting for you …
+A little trouble to find it or by curiosity to better understand the simulation, the following story of the little and gentle brewer and *Les4Mousquetaires* is waiting for you…
+
 
 ### Let's play with the simulation
 
@@ -194,3 +196,26 @@ expected.number[i] = Total.exports[i-1]
 $$
 
 At the beginning of the simulation, for the year 2004, the expected production $$expected.number[2004]$$ is set to 1'000 beers.
+
+## 6) Final advice
+
+Although D'Artagnan's advice was explicit and easy to interpret, Athos' and Porthos' advices were more complex and therefore less obvious to the little and gentle brewer. It is for this reason that the *Les4Mousquetaires* chose to explore all the different possibilities of brewery locations and beer syles.
+
+As the little and gentle brewer based his choice firstly on the number of countries reached by his beer and secondly on the number of beers produced, *Les4Mousquetaires* chose to represent their results in two distinct tables.
+
+The first one was the top 10 pairs `(brewery location, beer style)` in terms of number of countries in which the beer was spread.
+
+
+<table border="1" class="dataframe">   <thead>     <tr> </tr>     <tr>       <th>Rank</th>       <th>country</th>       <th>beer</th>       <th>cumulated countries</th>       <th>cumulated beers</th>     </tr>   </thead> 
+    
+<tbody>     <tr>       <th>🥇</th>       <td>North Korea</td>       <td>Specialty Beer</td>       <td>14</td>       <td>34589.0</td>     </tr>     <tr>       <th>🥈</th>       <td>Canada</td>       <td>IIPA</td>       <td>102</td>       <td>33356.0</td>     </tr>     <tr>       <th>🥉</th>       <td>United States</td>       <td>Strong Ale</td>       <td>141</td>       <td>33144.0</td>     </tr>     <tr>       <th>4</th>       <td>United States</td>       <td>IIPA</td>       <td>141</td>       <td>31565.0</td>     </tr>     <tr>       <th>5</th>       <td>Moldova</td>       <td>Dark Lager</td>       <td>33</td>       <td>30722.0</td>     </tr>     <tr>       <th>6</th>       <td>United States</td>       <td>Ale</td>       <td>141</td>       <td>30533.0</td>     </tr>     <tr>       <th>7</th>       <td>Belarus</td>       <td>Sour</td>       <td>42</td>       <td>30388.0</td>     </tr>     <tr>       <th>8</th>       <td>Antigua &amp; Barbuda</td>       <td>Strong Ale</td>       <td>15</td>       <td>29395.0</td>     </tr>     <tr>       <th>9</th>       <td>Tunisia</td>       <td>Ale</td>       <td>32</td>       <td>29249.0</td>     </tr>     <tr>       <th>10</th>       <td>Madagascar</td>       <td>Dark Lager</td>       <td>19</td>       <td>29060.0</td>     </tr>   </tbody> </table>
+
+The second was the top 10 pairs in terms of number of beers produced.
+
+<table border="1" class="dataframe">   <thead>   <tr>       <th>Rank</th>       <th>country</th>       <th>beer</th>       <th>cumulated countries</th>       <th>cumulated beers</th>     </tr>   </thead>   <tbody>     <tr>       <th>🥇</th>       <td>United States</td>       <td>Ale</td>       <td>141</td>       <td>30533.0</td>     </tr>     <tr>       <th>🥈</th>       <td>United States</td>       <td>Lager</td>       <td>141</td>       <td>18852.0</td>     </tr>     <tr>       <th>🥉</th>       <td>United States</td>       <td>Belgian Ale</td>       <td>141</td>       <td>15480.0</td>     </tr>     <tr>       <th>4</th>       <td>United States</td>       <td>Bitter Ale</td>       <td>141</td>       <td>16030.0</td>     </tr>     <tr>       <th>5</th>       <td>United States</td>       <td>Bock</td>       <td>141</td>       <td>9436.0</td>     </tr>     <tr>       <th>6</th>       <td>United States</td>       <td>Brown Ale</td>       <td>141</td>       <td>16459.0</td>     </tr>     <tr>       <th>7</th>       <td>United States</td>       <td>Cider</td>       <td>141</td>       <td>16736.0</td>     </tr>     <tr>       <th>8</th>       <td>United States</td>       <td>Dark Ale</td>       <td>141</td>       <td>14363.0</td>     </tr>     <tr>       <th>9</th>       <td>United States</td>       <td>Dark Lager</td>       <td>141</td>       <td>22483.0</td>     </tr>     <tr>       <th>10</th>       <td>United States</td>       <td>IIPA</td>       <td>141</td>       <td>31565.0</td>     </tr>   </tbody> </table>
+
+According to the wishes of the little and gentle brewer, *Les4Mousquetaires* suggested the following combinations:
+
+    🥇 United States :  Ale 
+    🥈 United States : IIPA
+    🥉 United States : Strong Al
