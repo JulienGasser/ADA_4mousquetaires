@@ -20,11 +20,13 @@ author: Julien Gasser, Florent Aviolat, Damien Gomez Donoso, Jérémie Veuthey
 ###############################################
 
 navbar-links:
-  About Us: "aboutme"
+  Datastory : "index"
   Assumptions : "assumptions"
+  About Us: "aboutme"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
+    - Main repo: "https://github.com/epfl-ada/ada-2022-project-les4mousquetaires"
+    - Website repo: "https://github.com/JulienGasser/ADA4mousquetaires"
+    - ADA course website : "https://ada.epfl.ch"
   #Author's home: "https://deanattali.com"
 
 ################
