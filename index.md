@@ -41,6 +41,9 @@ A little trouble to find it or by curiosity to better understand the simulation,
 
 $$\quad$$Created by *Les4Mousquetaires*, the above simulation is a practical tool to help the little and gentle brewer to spread happiness 🍻 around the world. The conception of this tool was a long and perilous adventure ! Here is the story...
 
+{: .box-note}
+**Note:** The temporality of the story is given in the assupmtion 1
+
 
 <img align="right" width="180" height="220" src="https://user-images.githubusercontent.com/77831063/209109848-ab9ce2c6-ba5e-4256-877d-c3f20a159ed0.png">
 
