@@ -26,3 +26,11 @@ This story studies the distribution of beers across time and space. However, reg
 
 {% include rating_brew.html %}
 
+### Assumption 4
+During the analysis of the different beer styles, the dataset that was cleaned up contained a lot of different styles. The choice was therefore made to group these different styles into 23 distinct categories. The list of categories is as follows:
+
+
+
+It remains to be noted that the clustering was done on the basis of the style categories that are defined on the websites {} and {} 
+
+
