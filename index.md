@@ -48,7 +48,7 @@ $$\quad$$On their side, D'Artagnan, Athos and Porthos sat down around a table an
 
 $$\quad$$The algorithm works as follow. First, the little and gentle brewer has to choose, as input, the type of beers that he wants to produce and the country where he wants to open his brewery. Then, the next three steps are iterated across the years :
 
-* **Step 1**:$$\quad$$At the start of the year, the number of beers expected to be distributed during this year is divided in shares of beers that are allocated to different beer consuming countries. This is the **exportation rate** step.
+* **Step 1**:$$\quad$$At the start of the year, the number of beers expected to be distributed during this year is divided in shares of beers that are allocated to different beer consuming countries. This is the exportation rate step determined with the **beer exportation profile**.
 
 
 * **Step 2**:$$\quad$$ Estimate how beer exports will vary during the year, based on the **popularity of beer** and the **affinity that the country has for a style of beer**. This resulting number of beers that will be effectively consummed this current year.
@@ -61,15 +61,15 @@ To easy the elaboration of this algorithm, the work was separated into three tas
 
 | Who $$\quad\quad\quad $$ | Task |
 | :--       | :--   |
-| D'Artagnan       | Study of the beers exportation rates       |
+| D'Artagnan       | Study of the beers exportation profile       |
 | Athos   | Study of the beers ratings distributions        |
 | Porthos   | Study of the popularity of beer        |
 | Aramis | Already fighting against cleaning datasets        |
 
 
-## *2) Beer export rate*
+## *2) Beer export profile*
 
-At the beginning of the year $$i$$, a certain number of beers is expected to be exported during the year: $$expected.number[i]$$. The objective of D'Artagnan was first to determine the expected **beer export rate**. 
+At the beginning of the year $$i$$, a certain number of beers is expected to be exported during the year: $$expected.number[i]$$. The objective of D'Artagnan was first to determine the expected **beer export profile**. 
 
 He took the data from the *great druid* cleaned by Aramis. As the dataset contained **beer ratings with the user countries, the brewery countries and the posting dates**, he calculated **for each year, for each beer producing country the proportion of beers expected to be distributed in each beer consuming country**. He collected all these data in a table named $$proportion.export$$ to build later the simulation algorithm.
 
@@ -168,7 +168,7 @@ $$\quad$$ At that time, all tools were ready to build the algorithm.
 
 ## *5) Gathering of all tasks*
 
-$$\quad$$ As a final step, *Les4mousquetaires* gathered their work to calculate how many beers the little and gentle brewer will have produced the year $$i$$ considering his **brewery location** and **beer style** choices. They first picked the expected proportions computed by D'Artagnan from the table $$proportion.export$$ and multiplied it with the expected number of beer to be exported before the adjustments. Then, they multiplied the expected exports by the weights that are given by Athos in $$weightings$$ that expressed the affinity that a country had towards a *beer style* during a specific year. Finally, he multiplied this result by the muliplicative factor $$(1 + popularity.variations_{c}[i])$$ in order to take into account the variation in *beer's popularity* of a *beer style* during the considered year. The above paragraph can be summarized with the following formula:
+$$\quad$$ As a final step, *Les4mousquetaires* gathered their work to calculate how many beers the little and gentle brewer will have produced the year $$i$$ considering his **brewery location** and **beer style** choices. They first picked the expected proportions computed by D'Artagnan from the table $$proportion.export$$ and multiplied it with the expected number of beer to be exported before the adjustments in $$$expected.number$$. Then, they multiplied the expected exports by the weights that are given by Athos in $$weightings$$ that expressed the affinity that a country had towards a *beer style* during a specific year. Finally, he multiplied this result by the muliplicative factor $$(1 + popularity.variations_{c}[i])$$ in order to take into account the variation in *beer's popularity* of a *beer style* during the considered year. The above paragraph can be summarized with the following formula:
 
 \\[exportation_{c}[i] = expected.number[i] \times proportion.export_{c_0,c}[i] \times weightings_{c,s}[i] \times (1 + popularity.variations_{c}[i])\\]
 
@@ -178,7 +178,7 @@ $$exportation_{c}[i]$$ : adjusted number of beers that is effectively exported f
 
 $$expected.number[i]$$ : expected number of beers to be exported, estimated at the beginning of the year i before the musketeers adjustments
 
-$$proportion.export_{c_0,c}[i]$$ : number of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located
+$$proportion.export_{c_0,c}[i]$$ : proportion of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located
 
 $$popularity.variations_{c}[i]$$ :variation rate of the proportion of the number of ratings of a beer style $$s$$ in a beer consuming country $$c$$ during the year $$i$$
 
