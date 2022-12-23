@@ -174,15 +174,15 @@ $$\quad$$ As a final step, *Les4mousquetaires* gathered their work to calculate 
 
 In the above equation, the variables are explained below:
 
-$$exportation_{c}[i]$$ : adjusted number of beers that is effectively exported for the year i
+* $$exportation_{c}[i]$$ : adjusted number of beers that is effectively exported for the year i
 
-$$expected.number[i]$$ : expected number of beers to be exported, estimated at the beginning of the year i before the musketeers adjustments
+* $$expected.number[i]$$ : expected number of beers to be exported, estimated at the beginning of the year i before the musketeers adjustments
 
-$$proportion.export_{c_0,c}[i]$$ : proportion of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located
+* $$proportion.export_{c_0,c}[i]$$ : proportion of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located
 
-$$popularity.variations_{c}[i]$$ :variation rate of the proportion of the number of ratings of a beer style $$s$$ in a beer consuming country $$c$$ during the year $$i$$
+* $$popularity.variations_{c}[i]$$ :variation rate of the proportion of the number of ratings of a beer style $$s$$ in a beer consuming country $$c$$ during the year $$i$$
 
-$$weightings_{c,s}[i]$$ : coefficient for year i to weight the exports estimating the affinity of a beer consuming country towards a beer style $$s$$
+* $$weightings_{c,s}[i]$$ : coefficient for year i to weight the exports estimating the affinity of a beer consuming country towards a beer style $$s$$
 
 After these adjustments, for the year $$i$$ the total exports of the little and gentle brewer corresponds to the sum of all exports over all beer consuming countries:
 
