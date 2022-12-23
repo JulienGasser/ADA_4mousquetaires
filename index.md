@@ -29,7 +29,7 @@ A little trouble to find it or by curiosity to better understand the simulation,
 <br>
 <div id="plotly-exportfig"></div>
 
-## Story of the little and gentle brewer and Les4Mousquetaires
+## Story
 
 ### *1) Birth of the algorithm*
 
@@ -133,11 +133,11 @@ $$\quad$$ The task was thus to predict what the rating would have been in each b
 **Note:** The distribution of the ratings in your country is plotted given the beer style that has been chosen to brew in the above Brewery success simulation tool to assess the affinity that a country has towards the chosen beer style.
 
 
-$$\quad$$ A random draw has also been performed according to the multinomial distribution of ratings to determine the rating of the chosen beer style in each beer consuming country for each year. This method had been chosen in order to take into account the distribution of rating and the factor of randomness in rating assignments. Indeed, a user's evaluation depends on many different factors. Since all these factors could not be taken into account, Athos assumed that the value of a rating was based on the multinomial distribution abovely described and that the uncertainty induced by the more complex factors could be translated by a random draw on this probability density.
+$$\quad$$ A random draw has also been performed according to the multinomial distribution of ratings to determine the rating of the chosen beer style in each beer consuming country for each year. This method had been chosen in order to take into account the distribution of rating and the factor of randomness in rating assignments. Indeed, a user's evaluation depends on many different factors. Since all these factors could not be accurately assessed, Athos assumed that the value of a rating was based on the multinomial distribution abovely described and that the uncertainty induced by the more complex factors could be translated by a random draw on this probability density.
 
-When Athos studied the affinity of a country to a beer style, there may have been missing values. For example, if in 2015 in Spain there were no ratings for Ale style. In these cases, he mades the following **hypothesis**: the draw was made on a uniform rating distribution.
+$$\quad$$ When Athos studied the affinity of a country to a beer style, there may have been missing values. For example, if in 2015 in Spain there were no ratings for Ale style. In these cases, he made the following **hypothesis**: the draw was made on a uniform rating distribution.
 
-$$\quad$$ The above described random draw was thus performed and the results were stored for each beer consumming country, for each year and for each possible chosen beer style. A sample of the obtained Dataframe that contains the adaptation weigths.
+$$\quad$$ The above described random draw was thus performed and the results were stored for each beer consumming country, for each year and for each possible chosen beer style. A sample of the obtained Dataframe that contains the adaptation weigths. Below a sample of this Dataframe is presented.
 
 ### Adaptation weight on the beer exports of a country towards a certain style of beer during a chosen year
 
@@ -149,11 +149,9 @@ $$\quad$$ At the end, the output of this work consisted in all the corresponding
 
 $$\quad$$ As explained in the previous chapters, Porthos' work was complementary to that done by Athos regarding the objective to assess the beer style dependence on the expected production $$expected.number[i]$$ defined at the beginning of the year.
 
-$$\quad$$As the dataset contained ratings with the rated **beer style**, the **publication dates** and **the locations** of the users, Porthos first defined the notion of *beer's popularity*. The latter is calculated as the proportion of one type of beer among all the rated beers considered in one year and for one country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink a lower proportion of this beer style compared to other in the same beer consuming country and vice versa.
+$$\quad$$As the dataset contained ratings with the rated beer style, the publication dates and the locations of the users, Porthos first defined the notion of *beer's popularity*. The latter is calculated as the proportion of one type of beer among all the rated beers considered in one year and for one user country i.e. beer consuming country. Porthos made the assumption that a decreasing *beer's popularity* means that people drink a lower proportion of this beer style compared to other in the same beer consuming country and vice versa.
 
-$$\quad$$ Porthos defined the variation of popularity: $$\Delta popularity$$. It represents the variation of the proportion of the number of ratings of a given beer style in a given beer consuming country between two years.
-
-$$\quad$$ To evaluate this, he plotted the *beer's popularity* for all countries and for all types of beers across years. Porthos had the feeling that the latter did not represent well a plausible evolution of *beer's popularity* within a year, as too abrupt. He thus decided to smooth these curves out by applying a k-nearest neighbors algorithm with $$k = 5$$. His calculations are shown on the figure below.
+$$\quad$$ To evaluate this data, he plotted the *beer's popularity* for all countries and for all types of beers across years. Porthos had the feeling that the latter did not represent well a plausible evolution of *beer's popularity* within a year, as too abrupt. He thus decided to smooth these curves out by applying a k-nearest neighbors algorithm with $$k = 5$$. His calculations are illustrated on the figure below.
 
 {% include porthos.html %}
 
@@ -164,33 +162,35 @@ $$\quad$$ At that time, all tools were ready to build the algorithm.
 
 ## *5) Gathering of all tasks*
 
-$$\quad$$ As a final step, *Les4mousquetaires* gathered their work to calculate how many beers the little and gentle brewer will have produced the year $$i$$ considering his **brewery location** and **beer style** choices. They first picked the expected proportions computed by D'Artagnan from the table $$proportion.export$$ and multiplied it with the expected number of beer to be exported before the adjustments in $$$expected.number$$. Then, they multiplied the expected exports by the weights that are given by Athos in $$weightings$$ that expressed the affinity that a country had towards a *beer style* during a specific year. Finally, he multiplied this result by the muliplicative factor $$(1 + popularity.variations_{c}[i])$$ in order to take into account the variation in *beer's popularity* of a *beer style* during the considered year. The above paragraph can be summarized with the following formula:
+$$\quad$$ As a final step, *Les4mousquetaires* gathered their work to calculate how many beers the little and gentle brewer will have produced the year $$i$$ considering his **brewery location** and **beer style** choices. **Step 1**, they first picked the export proportion profiles computed by D'Artagnan from the table $$proportion.export$$ and multiplied it with the expected number of beer to be exported before the adjustments, $$expected.number$$. **Step 2**, they multiplied the expected exports by the weights that are given by Athos in $$weightings$$ that expressed the affinity that a country had towards a beer style during a specific year. They then multiplied this result by the muliplicative factor $$(1 + popularity.variations_{c}[i])$$ in order to take into account the variation in *beer's popularity* of a beer style during the considered year. The above paragraph can be summarized with the following formula:
 
-$$exportation_{c}[i] =$$
+$$exportation_{c_0,c}[i] =$$
 
-$$expected.number[i] \times proportion.export_{c_0,c}[i] \times weightings_{c,s}[i] \times (1 + popularity.variations_{c}[i])$$
+$$expected.number[i] \times proportion.export_{c_0,c}[i] \times weightings_{c,s}[i] \times (1 + popularity.variations_{c,s}[i])$$
 
 In the above equation, the variables are explained below:
 
-* $$exportation_{c}[i]$$ : adjusted number of beers that is effectively exported for the year i
+* $$exportation_{c_0,c}[i]$$ : adjusted number of beers that is effectively exported for the year i from the beer producing country $c_0$ to the beer consuming country $c$
 
 * $$expected.number[i]$$ : expected number of beers to be exported, estimated at the beginning of the year i before the musketeers adjustments
 
 * $$proportion.export_{c_0,c}[i]$$ : proportion of beers expected to be distributed for the year i in the beer consummer country $c$ from the country $$c_0$$ where the brewery is located
 
-* $$popularity.variations_{c}[i]$$ :variation rate of the proportion of the number of ratings of a beer style $$s$$ in a beer consuming country $$c$$ during the year $$i$$
+* $$popularity.variations_{c,s}[i]$$ : difference between the *beer’s popularity* for the beer consuming country *c* and beer style *s* of the year *i+1* and the one of the year *i*
 
-* $$weightings_{c,s}[i]$$ : coefficient for year i to weight the exports estimating the affinity of a beer consuming country towards a beer style $$s$$
+* $$weightings_{c,s}[i]$$ : coefficient for year *i* to weight the exports estimating the affinity of a beer consuming country *c* towards a beer style $$s$$
 
-After these adjustments, for the year $$i$$ the total exports of the little and gentle brewer corresponds to the sum of all exports over all beer consuming countries:
+After these adjustments, for the year $$i$$ the total number of beers distributed by the little and gentle brewer corresponds to the sum of all exports over all beer consuming countries:
 
 $$
-Total.exports[i] = \sum_{c \in Country} exportation_{c}[i]
+Total.exports[i] = \sum_{c \in Country} exportation_{c_0,c}[i]
 $$
 
-$$\quad$$ At the beginning of the simulation, the expected production $$expected.number[2004]$$ is set to 10'000. Then, for the next years, the expected production $$expected.number[i]$$ for the year $$i$$ defined at the beginning of the year, is taken as the total exports of the year $$i-1$$. Id est:
+$$\quad$$ **Step 3**. The expected production $$expected.number[i]$$ for the year $$i$$ defined at the beginning of the year, is taken as the total exports of the year $$i-1$$. Id est:
 
 
 $$
 expected.number[i] = Total.exports[i-1]
 $$
+
+At the beginning of the simulation, for the year 2004, the expected production $$expected.number[2004]$$ is set to 1'000 beers.
